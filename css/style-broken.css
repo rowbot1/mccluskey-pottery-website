@@ -1,0 +1,121 @@
+/* McCluskey Pottery - Main Styles */
+
+:root {
+    --irish-green: #2A5434;
+    --pottery-cream: #F5E6D3;
+    --terracotta: #C65D00;
+    --charcoal: #2C2C2C;
+    --warm-gray: #6B6B6B;
+    --clay-brown: #8B6B47;
+    --porcelain: #FAFAF8;
+    
+    --shadow-soft: 0 2px 10px rgba(0,0,0,0.1);
+    --shadow-medium: 0 4px 20px rgba(0,0,0,0.15);
+    --shadow-strong: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+/* Form Validation Styles */
+input.error,
+textarea.error,
+select.error {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.2);
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Rate limit message styles */
+.rate-limit-message {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* Security notice styles */
+.security-notice {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* Additional form security styles */
+form {
+    position: relative;
+}
+
+form[data-submitting="true"] {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+form[data-submitting="true"]::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Secure connection indicator */
+.secure-indicator {
+    color: var(--irish-green);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.secure-indicator::before {
+    content: "🔒";
+    font-size: 14px;
+}
+
+/* Input field security enhancements */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+    border-color: var(--irish-green);
+    box-shadow: 0 0 0 2px rgba(42, 84, 52, 0.2);
+    outline: none;
+}
+
+/* Existing styles would continue below... */

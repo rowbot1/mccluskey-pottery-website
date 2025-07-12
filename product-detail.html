@@ -232,12 +232,23 @@
 
     <script src="js/products-data.js"></script>
     <script>
+        // Load products (same pattern as main.js)
+        function loadProducts() {
+            const savedProducts = localStorage.getItem('mccluskeyProducts');
+            if (savedProducts) {
+                return JSON.parse(savedProducts);
+            }
+            return typeof mccluskeyProducts !== 'undefined' ? mccluskeyProducts : [];
+        }
+        
+        const products = loadProducts();
+        
         // Get product ID from URL
         const urlParams = new URLSearchParams(window.location.search);
         const productId = parseInt(urlParams.get('id'));
         
         // Find product
-        const product = window.products.find(p => p.id === productId);
+        const product = products.find(p => p.id === productId);
         
         if (product) {
             // Populate product details

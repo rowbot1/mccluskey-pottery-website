@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Potter's Journal - McCluskey Pottery</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .blog-index-hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, var(--pottery-cream) 0%, var(--porcelain) 100%);
+            text-align: center;
+        }
+        .blog-index-content {
+            padding: 80px 0;
+        }
+        .blog-list {
+            display: grid;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .blog-list-item {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+        .blog-list-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-medium);
+        }
+        .blog-list-image {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .blog-list-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .blog-list-date {
+            font-size: 14px;
+            color: var(--warm-gray);
+            margin-bottom: 10px;
+        }
+        .blog-list-title {
+            font-size: 32px;
+            color: var(--charcoal);
+            margin-bottom: 15px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .blog-list-excerpt {
+            color: var(--warm-gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .blog-list-link {
+            color: var(--irish-green);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        .blog-list-link:hover {
+            color: var(--terracotta);
+            gap: 15px;
+        }
+        @media (max-width: 768px) {
+            .blog-list-item {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html" style="text-decoration: none;">
+                    <div class="logo-stamp">
+                        <span class="logo-mc">MC</span>
+                        <span class="logo-text">McCluskey<br>Pottery</span>
+                        <span class="logo-year">Est. Limavady</span>
+                    </div>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Studio</a></li>
+                <li><a href="../index.html#collection" class="nav-link">Collection</a></li>
+                <li><a href="../index.html#process" class="nav-link">Process</a></li>
+                <li><a href="../index.html#stories" class="nav-link">Stories</a></li>
+                <li><a href="../index.html#blog" class="nav-link">Journal</a></li>
+                <li><a href="../index.html#visit" class="nav-link">Visit</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blog Index Hero -->
+    <section class="blog-index-hero">
+        <div class="container">
+            <h1 class="hero-title">
+                <span class="title-accent">Welcome to</span>
+                <span class="title-main">The Potter's Journal</span>
+            </h1>
+            <div class="title-divider">
+                <span class="divider-line"></span>
+                <span class="divider-symbol">✧</span>
+                <span class="divider-line"></span>
+            </div>
+            <p class="section-subtitle">Reflections on clay, craft, and the creative life</p>
+        </div>
+    </section>
+
+    <!-- Blog Index Content -->
+    <section class="blog-index-content">
+        <div class="container">
+            <div class="blog-list">
+                <!-- Blog Post 1 -->
+                <article class="blog-list-item">
+                    <div class="blog-list-image" style="background: linear-gradient(135deg, #f5e6d3 0%, #e8c4a0 100%);">
+                        <svg viewBox="0 0 64 64" class="blog-icon" style="width: 100px; height: 100px; color: rgba(255,255,255,0.9);">
+                            <path d="M32 10 Q20 15 20 25 Q20 40 25 45 Q28 48 32 48 Q36 48 39 45 Q44 40 44 25 Q44 15 32 10" 
+                                  fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M25 45 Q28 50 32 50 Q36 50 39 45" 
+                                  fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="32" cy="10" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="blog-list-content">
+                        <div class="blog-list-date">November 15, 2024</div>
+                        <h2 class="blog-list-title">The Dance of Fire and Clay</h2>
+                        <p class="blog-list-excerpt">
+                            Every firing is a conversation between the potter's intention and the kiln's wisdom. 
+                            In the ancient dance of fire and earth, we find stories written in glaze and ash...
+                        </p>
+                        <a href="dance-of-fire-and-clay.html" class="blog-list-link">
+                            Read the full story
+                            <span class="link-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-list-item">
+                    <div class="blog-list-image" style="background: linear-gradient(135deg, #d4e4f7 0%, #a8c0e0 100%);">
+                        <svg viewBox="0 0 64 64" class="blog-icon" style="width: 100px; height: 100px; color: rgba(255,255,255,0.9);">
+                            <path d="M20 32 Q15 30 15 25 Q15 20 20 20 Q25 20 25 25 L25 35"
+                                  fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M44 32 Q49 30 49 25 Q49 20 44 20 Q39 20 39 25 L39 35"
+                                  fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M25 35 Q32 40 39 35"
+                                  fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="blog-list-content">
+                        <div class="blog-list-date">November 8, 2024</div>
+                        <h2 class="blog-list-title">Hands Remember What Hearts Forget</h2>
+                        <p class="blog-list-excerpt">
+                            In the rhythm of the wheel, muscle memory meets meditation. Each piece carries 
+                            the imprint of a thousand others before it, yet stands utterly unique...
+                        </p>
+                        <a href="hands-remember.html" class="blog-list-link">
+                            Read the full story
+                            <span class="link-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-list-item">
+                    <div class="blog-list-image" style="background: linear-gradient(135deg, #e8d5d5 0%, #d4a5a5 100%);">
+                        <svg viewBox="0 0 64 64" class="blog-icon" style="width: 100px; height: 100px; color: rgba(255,255,255,0.9);">
+                            <path d="M32 20 Q24 10 16 15 Q8 20 12 30 Q16 40 32 50 Q48 40 52 30 Q56 20 48 15 Q40 10 32 20"
+                                  fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="blog-list-content">
+                        <div class="blog-list-date">November 1, 2024</div>
+                        <h2 class="blog-list-title">Irish Soil, Global Stories</h2>
+                        <p class="blog-list-excerpt">
+                            From Limavady's ancient earth comes clay that speaks a universal language. 
+                            Each piece bridges continents, carrying the warmth of Irish hospitality 
+                            to tables around the world...
+                        </p>
+                        <a href="irish-soil-global-stories.html" class="blog-list-link">
+                            Read the full story
+                            <span class="link-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">McCluskey Pottery</div>
+                    <p>Handcrafted with love in Limavady since forever</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html#collection">Shop Collection</a></li>
+                        <li><a href="../index.html#process">Our Process</a></li>
+                        <li><a href="../index.html#stories">Stories</a></li>
+                        <li><a href="../index.html#visit">Visit Studio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 McCluskey Pottery. All pieces unique, all stories treasured.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

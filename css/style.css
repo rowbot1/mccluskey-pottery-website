@@ -1447,3 +1447,226 @@ cite {
         width: 100%;
     }
 }
+
+/* ===============================
+   Blog Section
+   =============================== */
+.blog-section {
+    padding: 100px 0;
+    background: var(--porcelain);
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: var(--pottery-cream);
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.blog-section .section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title-accent {
+    display: block;
+    font-family: 'Amatic SC', cursive;
+    font-size: 0.6em;
+    color: var(--terracotta);
+    font-weight: 700;
+    margin-bottom: -10px;
+}
+
+.title-main {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+}
+
+.title-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.divider-line {
+    width: 60px;
+    height: 1px;
+    background: var(--clay-brown);
+    opacity: 0.5;
+}
+
+.divider-symbol {
+    font-size: 20px;
+    color: var(--clay-brown);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-strong);
+}
+
+.blog-card.featured-post {
+    grid-column: span 2;
+}
+
+@media (max-width: 1024px) {
+    .blog-card.featured-post {
+        grid-column: span 1;
+    }
+}
+
+.blog-image-wrapper {
+    position: relative;
+    height: 250px;
+}
+
+.blog-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-icon {
+    width: 80px;
+    height: 80px;
+    color: rgba(255, 255, 255, 0.9);
+    animation: float 4s ease-in-out infinite;
+}
+
+.blog-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.blog-date {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 15px;
+    padding: 10px 15px;
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+}
+
+.date-day {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--irish-green);
+    line-height: 1;
+}
+
+.date-month {
+    display: block;
+    font-size: 14px;
+    color: var(--warm-gray);
+    text-transform: uppercase;
+}
+
+.blog-content {
+    padding: 30px;
+}
+
+.blog-title {
+    font-size: 26px;
+    color: var(--charcoal);
+    margin-bottom: 15px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+}
+
+.blog-excerpt {
+    color: var(--warm-gray);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.blog-link {
+    color: var(--irish-green);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.blog-link:hover {
+    color: var(--terracotta);
+    gap: 15px;
+}
+
+.link-arrow {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.blog-link:hover .link-arrow {
+    transform: translateX(5px);
+}
+
+.blog-cta {
+    text-align: center;
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 40px;
+    background: transparent;
+    color: var(--irish-green);
+    border: 2px solid var(--irish-green);
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: var(--irish-green);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-icon {
+    transition: transform 0.3s ease;
+}
+
+.btn-outline:hover .btn-icon {
+    transform: translateX(5px);
+}

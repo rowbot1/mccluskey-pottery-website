@@ -149,7 +149,8 @@ a:hover {
 
 .logo-pottery-wheel {
     color: var(--irish-green);
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    display: block;
 }
 
 .logo-text {

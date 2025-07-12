@@ -96,6 +96,15 @@ function setupNavigation() {
             }
         });
     });
+    
+    // Ensure blog links work properly
+    document.querySelectorAll('.blog-link, .btn-outline').forEach(link => {
+        if (link.href && !link.href.startsWith('#')) {
+            link.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+    });
 }
 
 // Scroll effects

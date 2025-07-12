@@ -65,7 +65,7 @@
                 </h1>
                 <div class="hero-divider"></div>
                 <p class="hero-subtitle">Handcrafted porcelain from the heart of Limavady</p>
-                <p class="hero-description">Where Irish tradition meets contemporary artistry,<br>shaped by the hands of Sean McCluskey</p>
+                <p class="hero-description">Where Irish tradition meets contemporary artistry,<br>shaped by masterful hands at McCluskey Pottery</p>
                 <div class="hero-actions">
                     <a href="#collection" class="btn-primary">Explore Collection</a>
                     <a href="#process" class="btn-secondary">Watch the Process</a>
@@ -105,7 +105,7 @@
                         "In every piece of clay, I see a story waiting to be told - 
                         a memory of Ireland's landscapes, traditions, and the warmth of its people."
                     </blockquote>
-                    <cite>- Sean McCluskey, Master Potter</cite>
+                    <cite>- McCluskey Pottery</cite>
                 </div>
                 <div class="philosophy-values">
                     <div class="value-card">
@@ -348,8 +348,8 @@
                         </div>
                         <div class="detail-item">
                             <h4>Contact</h4>
-                            <p>Tel: +44 (0) 28 7777 0000<br>
-                            Email: hello@mccluskeypottery.ie</p>
+                            <p>Tel: Contact us for details<br>
+                            Email: Contact us for details</p>
                         </div>
                     </div>
 
@@ -373,13 +373,13 @@
                     <h3>Send us a Message</h3>
                     <form class="contact-form">
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" name="name" placeholder="Your Name" required maxlength="100">
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                            <input type="email" name="email" placeholder="Your Email" required maxlength="254">
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <textarea name="message" placeholder="Your Message" rows="5" required minlength="10" maxlength="1000"></textarea>
                         </div>
                         <button type="submit" class="submit-btn">Send Message</button>
                     </form>
@@ -395,7 +395,7 @@
                 <h3>Join Our Circle</h3>
                 <p>Be the first to know about new collections and studio events</p>
                 <form class="newsletter-form">
-                    <input type="email" placeholder="Your email address" required>
+                    <input type="email" name="email" placeholder="Your email address" required maxlength="254">
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
@@ -582,6 +582,7 @@
     </div>
 
     <script src="js/products-data.js"></script>
+    <script src="js/security.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

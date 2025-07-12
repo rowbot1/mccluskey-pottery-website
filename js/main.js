@@ -1,5 +1,10 @@
 // McCluskey Pottery - Artisanal JavaScript
 
+// Load security utilities
+const script = document.createElement('script');
+script.src = 'js/security.js';
+document.head.appendChild(script);
+
 // Use real products from McCluskey Pottery if available
 const defaultProducts = typeof mccluskeyProducts !== 'undefined' ? mccluskeyProducts : [];
 
@@ -520,16 +525,40 @@ function closeCheckout() {
 function handleCheckout(e) {
     e.preventDefault();
     
-    // Create order object
+    // Check rate limiting
+    if (typeof Security !== 'undefined' && !Security.rateLimiter.canSubmit('checkout', 3, 60000)) {
+        const remainingTime = Math.ceil(Security.rateLimiter.getRemainingTime('checkout') / 1000);
+        showNotification(`Please wait ${remainingTime} seconds before trying again`, 'error');
+        return;
+    }
+    
+    // Get form data
+    const formData = {
+        name: document.getElementById('customer-name').value,
+        email: document.getElementById('customer-email').value,
+        phone: document.getElementById('customer-phone').value,
+        address: document.getElementById('customer-address').value
+    };
+    
+    // Validate form data
+    if (typeof Security !== 'undefined') {
+        const validation = Security.validateForm(formData);
+        if (!validation.isValid) {
+            Security.displayErrors(e.target, validation.errors);
+            return;
+        }
+    }
+    
+    // Create order object with sanitized data
     const order = {
         id: Date.now(),
         date: new Date().toISOString(),
         status: 'pending',
         customer: {
-            name: document.getElementById('customer-name').value,
-            email: document.getElementById('customer-email').value,
-            phone: document.getElementById('customer-phone').value,
-            address: document.getElementById('customer-address').value
+            name: typeof Security !== 'undefined' ? Security.sanitizeInput(formData.name) : formData.name,
+            email: typeof Security !== 'undefined' ? Security.sanitizeInput(formData.email) : formData.email,
+            phone: typeof Security !== 'undefined' ? Security.sanitizeInput(formData.phone) : formData.phone,
+            address: typeof Security !== 'undefined' ? Security.sanitizeInput(formData.address) : formData.address
         },
         items: cart.map(item => ({
             id: item.id,
@@ -538,7 +567,7 @@ function handleCheckout(e) {
             price: item.price
         })),
         total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
-        notes: document.getElementById('order-notes').value
+        notes: typeof Security !== 'undefined' ? Security.sanitizeInput(document.getElementById('order-notes').value) : document.getElementById('order-notes').value
     };
     
     // Save order to admin storage
@@ -581,18 +610,72 @@ function handleCheckout(e) {
 // Setup forms
 function setupForms() {
     // Contact form
-    document.querySelector('.contact-form').addEventListener('submit', (e) => {
-        e.preventDefault();
-        showNotification('Thank you for your message! We\'ll be in touch soon.');
-        e.target.reset();
-    });
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Check rate limiting
+            if (typeof Security !== 'undefined' && !Security.rateLimiter.canSubmit('contact', 3, 60000)) {
+                const remainingTime = Math.ceil(Security.rateLimiter.getRemainingTime('contact') / 1000);
+                showNotification(`Please wait ${remainingTime} seconds before trying again`, 'error');
+                return;
+            }
+            
+            // Get form inputs
+            const inputs = e.target.querySelectorAll('input, textarea');
+            const formData = {};
+            
+            inputs.forEach(input => {
+                if (input.type === 'text' && !input.placeholder.includes('Email')) {
+                    formData.name = input.value;
+                } else if (input.type === 'email') {
+                    formData.email = input.value;
+                } else if (input.tagName === 'TEXTAREA') {
+                    formData.message = input.value;
+                }
+            });
+            
+            // Validate form data
+            if (typeof Security !== 'undefined') {
+                const validation = Security.validateForm(formData);
+                if (!validation.isValid) {
+                    Security.displayErrors(e.target, validation.errors);
+                    return;
+                }
+            }
+            
+            showNotification('Thank you for your message! We\'ll be in touch soon.');
+            e.target.reset();
+        });
+    }
     
     // Newsletter form
-    document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
-        e.preventDefault();
-        showNotification('Welcome to our circle! Check your email for confirmation.');
-        e.target.reset();
-    });
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Check rate limiting
+            if (typeof Security !== 'undefined' && !Security.rateLimiter.canSubmit('newsletter', 5, 60000)) {
+                const remainingTime = Math.ceil(Security.rateLimiter.getRemainingTime('newsletter') / 1000);
+                showNotification(`Please wait ${remainingTime} seconds before trying again`, 'error');
+                return;
+            }
+            
+            const emailInput = e.target.querySelector('input[type="email"]');
+            if (emailInput) {
+                // Validate email
+                if (typeof Security !== 'undefined' && !Security.validateEmail(emailInput.value)) {
+                    showNotification('Please enter a valid email address', 'error');
+                    return;
+                }
+            }
+            
+            showNotification('Welcome to our circle! Check your email for confirmation.');
+            e.target.reset();
+        });
+    }
 }
 
 // Add animations CSS

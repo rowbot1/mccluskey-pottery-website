@@ -147,11 +147,9 @@ a:hover {
     background: var(--pottery-cream);
 }
 
-.logo-mc {
-    font-family: 'Amatic SC', cursive;
-    font-size: 24px;
-    font-weight: 700;
+.logo-pottery-wheel {
     color: var(--irish-green);
+    margin-bottom: 5px;
 }
 
 .logo-text {

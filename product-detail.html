@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - McCluskey Pottery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .product-detail-section {
+            padding: 150px 0 80px;
+            background: var(--porcelain);
+        }
+        .product-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .product-images {
+            position: sticky;
+            top: 120px;
+        }
+        .main-image {
+            width: 100%;
+            height: 500px;
+            background: var(--pottery-cream);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 20px 0;
+        }
+        .product-detail-title {
+            font-size: 48px;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .product-detail-price {
+            font-size: 36px;
+            color: var(--irish-green);
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        .product-detail-description {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--warm-gray);
+            margin-bottom: 30px;
+        }
+        .product-features {
+            margin: 40px 0;
+            padding: 30px;
+            background: var(--pottery-cream);
+            border-radius: 20px;
+        }
+        .product-features h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--charcoal);
+        }
+        .product-features ul {
+            list-style: none;
+        }
+        .product-features li {
+            padding: 10px 0;
+            color: var(--warm-gray);
+            position: relative;
+            padding-left: 25px;
+        }
+        .product-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--irish-green);
+            font-weight: 600;
+        }
+        .add-to-cart-detail {
+            background: var(--irish-green);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 30px;
+        }
+        .add-to-cart-detail:hover {
+            background: var(--terracotta);
+            transform: translateY(-2px);
+        }
+        .back-to-shop {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--irish-green);
+            text-decoration: none;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        .back-to-shop:hover {
+            color: var(--terracotta);
+            gap: 15px;
+        }
+        @media (max-width: 768px) {
+            .product-detail-grid {
+                grid-template-columns: 1fr;
+            }
+            .product-images {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <div class="logo-stamp">
+                        <span class="logo-mc">MC</span>
+                        <span class="logo-text">McCluskey<br>Pottery</span>
+                        <span class="logo-year">Est. Limavady</span>
+                    </div>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Studio</a></li>
+                <li><a href="index.html#collection" class="nav-link">Collection</a></li>
+                <li><a href="index.html#process" class="nav-link">Process</a></li>
+                <li><a href="index.html#stories" class="nav-link">Stories</a></li>
+                <li><a href="blog/index.html" class="nav-link">Journal</a></li>
+                <li><a href="index.html#visit" class="nav-link">Visit</a></li>
+                <li class="cart-icon">
+                    <a href="#cart" class="nav-link">
+                        <div class="cart-vessel">
+                            <span class="cart-count">0</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail-section">
+        <div class="container">
+            <a href="index.html#collection" class="back-to-shop">
+                <span>←</span>
+                <span>Back to Collection</span>
+            </a>
+            
+            <div class="product-detail-grid">
+                <div class="product-images">
+                    <div class="main-image">
+                        <img id="product-image" src="" alt="">
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <h1 id="product-name" class="product-detail-title"></h1>
+                    <div id="product-price" class="product-detail-price"></div>
+                    <p id="product-description" class="product-detail-description"></p>
+                    
+                    <div class="product-features">
+                        <h3>Features</h3>
+                        <ul id="product-features">
+                            <!-- Features will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                    
+                    <button id="add-to-cart-detail" class="add-to-cart-detail">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">McCluskey Pottery</div>
+                    <p>Handcrafted with love in Limavady since forever</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#collection">Shop Collection</a></li>
+                        <li><a href="index.html#process">Our Process</a></li>
+                        <li><a href="index.html#stories">Stories</a></li>
+                        <li><a href="index.html#visit">Visit Studio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 McCluskey Pottery. All pieces unique, all stories treasured.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Your Pottery Collection</h2>
+            <div id="cart-items" class="cart-items"></div>
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total">€0</span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/products-data.js"></script>
+    <script>
+        // Get product ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get('id'));
+        
+        // Find product
+        const product = window.products.find(p => p.id === productId);
+        
+        if (product) {
+            // Populate product details
+            document.getElementById('product-name').textContent = product.name;
+            document.getElementById('product-price').textContent = `€${product.price}`;
+            document.getElementById('product-description').textContent = product.description;
+            document.getElementById('product-image').src = product.image;
+            document.getElementById('product-image').alt = product.name;
+            
+            // Add features based on category
+            const features = {
+                'bowls': [
+                    'Handcrafted porcelain',
+                    'Food safe glazes',
+                    'Dishwasher safe',
+                    'Microwave safe',
+                    'Unique Irish design'
+                ],
+                'mugs': [
+                    'Perfect 300ml capacity',
+                    'Comfortable handle',
+                    'Dishwasher safe',
+                    'Microwave safe',
+                    'Keeps beverages warm'
+                ],
+                'vases': [
+                    'Watertight seal',
+                    'Elegant silhouette',
+                    'Perfect for Irish wildflowers',
+                    'Handpainted details',
+                    'Statement piece'
+                ],
+                'plates': [
+                    'Full dinner size',
+                    'Stackable design',
+                    'Dishwasher safe',
+                    'Microwave safe',
+                    'Chip resistant'
+                ],
+                'decorative': [
+                    'One-of-a-kind piece',
+                    'Display ready',
+                    'Handpainted details',
+                    'Signed by artist',
+                    'Collector\'s item'
+                ]
+            };
+            
+            const categoryFeatures = features[product.category] || features['decorative'];
+            const featuresHtml = categoryFeatures.map(feature => `<li>${feature}</li>`).join('');
+            document.getElementById('product-features').innerHTML = featuresHtml;
+            
+            // Add to cart functionality
+            document.getElementById('add-to-cart-detail').addEventListener('click', () => {
+                // Get cart from localStorage
+                let cart = JSON.parse(localStorage.getItem('mccluskeyCart') || '[]');
+                
+                // Check if product already in cart
+                const existingItem = cart.find(item => item.id === product.id);
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.image,
+                        quantity: 1
+                    });
+                }
+                
+                // Save cart
+                localStorage.setItem('mccluskeyCart', JSON.stringify(cart));
+                
+                // Update cart count
+                updateCartCount();
+                
+                // Show notification
+                showNotification(`${product.name} added to cart`);
+            });
+        } else {
+            // Product not found
+            document.querySelector('.product-detail-section').innerHTML = `
+                <div class="container" style="text-align: center; padding: 100px 0;">
+                    <h2>Product not found</h2>
+                    <p>Sorry, we couldn't find that product.</p>
+                    <a href="index.html#collection" class="btn-primary" style="margin-top: 30px;">Back to Collection</a>
+                </div>
+            `;
+        }
+        
+        // Cart functionality
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('mccluskeyCart') || '[]');
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.querySelector('.cart-count').textContent = count;
+        }
+        
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: var(--irish-green);
+                color: white;
+                padding: 15px 30px;
+                border-radius: 30px;
+                box-shadow: var(--shadow-medium);
+                z-index: 3000;
+                animation: slideIn 0.3s ease;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        // Initialize cart count
+        updateCartCount();
+        
+        // Cart modal functionality (simplified version)
+        document.querySelector('.cart-icon a').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = 'index.html#cart';
+        });
+    </script>
+</body>
+</html>

@@ -133,16 +133,20 @@ function displayProducts(filter = 'all') {
     
     elements.productsGrid.innerHTML = filteredProducts.map(product => `
         <div class="product-card ${product.featured ? 'featured' : ''}" data-category="${product.category}">
-            <div class="product-image">
-                ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
-                ${product.stock !== undefined && product.stock === 0 ? '<div class="product-badge" style="background: #dc3545;">Out of Stock</div>' : ''}
-                <img src="${product.image}" alt="${product.name}" 
-                     style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="product-info">
-                <h3 class="product-name">${product.name}</h3>
-                <p class="product-story">${product.story}</p>
-                ${product.details ? `<p class="product-details">${product.details}</p>` : ''}
+            <a href="product-detail.html?id=${product.id}" style="text-decoration: none; color: inherit;">
+                <div class="product-image">
+                    ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
+                    ${product.stock !== undefined && product.stock === 0 ? '<div class="product-badge" style="background: #dc3545;">Out of Stock</div>' : ''}
+                    <img src="${product.image}" alt="${product.name}" 
+                         style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">${product.name}</h3>
+                    <p class="product-story">${product.story}</p>
+                    ${product.details ? `<p class="product-details">${product.details}</p>` : ''}
+                </div>
+            </a>
+            <div class="product-info" style="padding-top: 0;">
                 <div class="product-footer">
                     <span class="product-price">£${product.price.toFixed(2)}</span>
                     <button class="add-to-cart" onclick="addToCart(${product.id})" 
@@ -178,6 +182,87 @@ function setupFilters() {
             displayProducts(filter);
         });
     });
+    
+    // Setup search functionality
+    setupSearch();
+}
+
+// Search functionality
+function setupSearch() {
+    const searchInput = document.getElementById('product-search');
+    if (!searchInput) return;
+    
+    searchInput.addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase().trim();
+        
+        if (searchTerm.length === 0) {
+            // Get current filter
+            const activeFilterBtn = document.querySelector('.filter-btn.active');
+            const currentFilter = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
+            displayProducts(currentFilter);
+            return;
+        }
+        
+        // Filter products based on search term
+        const searchResults = products.filter(product => 
+            product.name.toLowerCase().includes(searchTerm) ||
+            product.description.toLowerCase().includes(searchTerm) ||
+            product.category.toLowerCase().includes(searchTerm) ||
+            (product.story && product.story.toLowerCase().includes(searchTerm))
+        );
+        
+        // Display search results
+        displaySearchResults(searchResults, searchTerm);
+    });
+}
+
+// Display search results
+function displaySearchResults(results, searchTerm) {
+    if (results.length === 0) {
+        elements.productsGrid.innerHTML = `
+            <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
+                <h3 style="color: var(--warm-gray); margin-bottom: 20px;">No results found for "${searchTerm}"</h3>
+                <p style="color: var(--warm-gray);">Try searching for bowls, mugs, vases, or specific product names.</p>
+            </div>
+        `;
+        return;
+    }
+    
+    // Display found products using the same format as displayProducts
+    elements.productsGrid.innerHTML = results.map(product => `
+        <div class="product-card ${product.featured ? 'featured' : ''}" data-category="${product.category}">
+            <a href="product-detail.html?id=${product.id}" style="text-decoration: none; color: inherit;">
+                <div class="product-image">
+                    ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
+                    ${product.stock !== undefined && product.stock === 0 ? '<div class="product-badge" style="background: #dc3545;">Out of Stock</div>' : ''}
+                    <img src="${product.image}" alt="${product.name}" 
+                         style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">${product.name}</h3>
+                    <p class="product-story">${product.story}</p>
+                    ${product.details ? `<p class="product-details">${product.details}</p>` : ''}
+                </div>
+            </a>
+            <div class="product-info" style="padding-top: 0;">
+                <div class="product-footer">
+                    <span class="product-price">£${product.price.toFixed(2)}</span>
+                    <button class="add-to-cart" onclick="addToCart(${product.id})" 
+                            ${product.stock !== undefined && product.stock === 0 ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : ''}>
+                        ${product.stock !== undefined && product.stock === 0 ? 'Out of Stock' : 'Add to Cart'}
+                    </button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+    
+    // Add fade-in animation
+    setTimeout(() => {
+        document.querySelectorAll('.product-card').forEach((card, index) => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        });
+    }, 100);
 }
 
 // Cart functionality

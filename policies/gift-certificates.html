@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Certificates - McCluskey Pottery</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .policy-section {
+            padding: 150px 0 80px;
+            background: var(--porcelain);
+        }
+        .policy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .gift-hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .gift-card-visual {
+            width: 400px;
+            max-width: 90%;
+            height: 250px;
+            margin: 40px auto;
+            background: linear-gradient(135deg, var(--pottery-cream) 0%, var(--porcelain) 100%);
+            border: 3px solid var(--irish-green);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+        }
+        .gift-card-visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, transparent 30%, rgba(255,255,255,0.3) 70%);
+            transform: rotate(45deg);
+        }
+        .gift-amounts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .amount-option {
+            background: white;
+            border: 2px solid var(--pottery-cream);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .amount-option:hover {
+            border-color: var(--irish-green);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-soft);
+        }
+        .amount-option h3 {
+            font-size: 32px;
+            color: var(--irish-green);
+            margin-bottom: 5px;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .benefit-item {
+            text-align: center;
+        }
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            color: var(--irish-green);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html" style="text-decoration: none;">
+                    <div class="logo-stamp">
+                        <span class="logo-mc">MC</span>
+                        <span class="logo-text">McCluskey<br>Pottery</span>
+                        <span class="logo-year">Est. Limavady</span>
+                    </div>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Studio</a></li>
+                <li><a href="../index.html#collection" class="nav-link">Collection</a></li>
+                <li><a href="../index.html#process" class="nav-link">Process</a></li>
+                <li><a href="../index.html#stories" class="nav-link">Stories</a></li>
+                <li><a href="../blog/index.html" class="nav-link">Journal</a></li>
+                <li><a href="../index.html#visit" class="nav-link">Visit</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Policy Section -->
+    <section class="policy-section">
+        <div class="container">
+            <div class="policy-content">
+                <div class="gift-hero">
+                    <h1 style="font-size: 48px; margin-bottom: 20px;">Gift Certificates</h1>
+                    <p style="font-size: 20px; font-style: italic;">
+                        Give the gift of handcrafted Irish pottery - perfect for any occasion
+                    </p>
+                </div>
+
+                <div class="gift-card-visual">
+                    <div style="text-align: center; z-index: 1;">
+                        <h2 style="font-family: 'Amatic SC', cursive; font-size: 36px; color: var(--irish-green);">McCluskey Pottery</h2>
+                        <p style="font-size: 18px; color: var(--clay-brown);">Gift Certificate</p>
+                    </div>
+                </div>
+
+                <h2 style="text-align: center; margin-bottom: 30px;">Choose Your Amount</h2>
+                
+                <div class="gift-amounts">
+                    <div class="amount-option">
+                        <h3>€25</h3>
+                        <p>Perfect for a special mug</p>
+                    </div>
+                    <div class="amount-option">
+                        <h3>€50</h3>
+                        <p>Great for a bowl or plate</p>
+                    </div>
+                    <div class="amount-option">
+                        <h3>€75</h3>
+                        <p>Ideal for a small set</p>
+                    </div>
+                    <div class="amount-option">
+                        <h3>€100</h3>
+                        <p>Generous gift option</p>
+                    </div>
+                    <div class="amount-option">
+                        <h3>€150</h3>
+                        <p>Perfect for collectors</p>
+                    </div>
+                    <div class="amount-option">
+                        <h3>Custom</h3>
+                        <p>Any amount you choose</p>
+                    </div>
+                </div>
+
+                <h2>Why Gift Certificates?</h2>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <svg class="benefit-icon" viewBox="0 0 60 60" fill="currentColor">
+                            <path d="M30 10 L40 20 L30 30 L20 20 Z"/>
+                            <path d="M20 20 L20 40 L30 50 L40 40 L40 20" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M15 20 L45 20" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <h3>Perfect Choice</h3>
+                        <p>Let them select exactly what speaks to them</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <svg class="benefit-icon" viewBox="0 0 60 60" fill="currentColor">
+                            <circle cx="30" cy="30" r="20" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M30 15 L30 30 L40 35" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <h3>No Expiry</h3>
+                        <p>Our certificates never expire - use anytime</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <svg class="benefit-icon" viewBox="0 0 60 60" fill="currentColor">
+                            <rect x="15" y="20" width="30" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M20 30 L25 35 L35 25" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <h3>Instant Delivery</h3>
+                        <p>Email delivery available for last-minute gifts</p>
+                    </div>
+                </div>
+
+                <h2>How It Works</h2>
+                
+                <ol style="margin-left: 30px;">
+                    <li><strong>Purchase:</strong> Choose your amount and complete checkout</li>
+                    <li><strong>Receive:</strong> Get a beautiful certificate by email or post</li>
+                    <li><strong>Redeem:</strong> Use online or in our studio - no restrictions</li>
+                    <li><strong>Enjoy:</strong> Select from our entire collection or commission custom work</li>
+                </ol>
+
+                <h2>Delivery Options</h2>
+                
+                <h3>Email Delivery (Free)</h3>
+                <p>Perfect for last-minute gifts! Your certificate will be emailed within 24 hours in a beautiful PDF format, ready to print or forward to the recipient.</p>
+                
+                <h3>Posted Certificate (€3)</h3>
+                <p>A physical certificate on premium paper, hand-signed and posted in a protective envelope. Perfect for presenting in person. Allow 3-5 days for delivery.</p>
+                
+                <h3>Gift Wrapped (€7)</h3>
+                <p>Your certificate arrives in a beautiful gift box with tissue paper and a hand-written note. The ultimate presentation for special occasions.</p>
+
+                <h2>Perfect For</h2>
+                
+                <ul>
+                    <li>Weddings - Help the couple build their collection</li>
+                    <li>Housewarmings - A thoughtful gift for new homes</li>
+                    <li>Birthdays - For the person who has everything</li>
+                    <li>Christmas - Avoid the shipping rush</li>
+                    <li>Thank You Gifts - Show appreciation with Irish craft</li>
+                    <li>Corporate Gifts - Support local artisans</li>
+                </ul>
+
+                <div style="background: var(--pottery-cream); padding: 40px; border-radius: 20px; margin: 40px 0; text-align: center;">
+                    <h2>Ready to Purchase?</h2>
+                    <p style="font-size: 18px; margin: 20px 0;">Contact us to order your gift certificate today</p>
+                    <p>Email: gifts@mccluskeypottery.ie<br>
+                    Phone: +44 28 7772 1234</p>
+                    <p style="margin-top: 20px; font-size: 16px;">
+                        <em>Gift certificates can also be purchased in person at our Limavady studio</em>
+                    </p>
+                </div>
+
+                <h2>Terms & Conditions</h2>
+                
+                <ul style="font-size: 16px;">
+                    <li>Gift certificates have no expiry date</li>
+                    <li>Can be used for any products or custom orders</li>
+                    <li>No cash redemption or change given</li>
+                    <li>Lost certificates can be reissued with proof of purchase</li>
+                    <li>Can be combined with other certificates</li>
+                    <li>Cannot be combined with other promotions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">McCluskey Pottery</div>
+                    <p>Handcrafted with love in Limavady since forever</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html#collection">Shop Collection</a></li>
+                        <li><a href="../index.html#process">Our Process</a></li>
+                        <li><a href="../index.html#stories">Stories</a></li>
+                        <li><a href="../index.html#visit">Visit Studio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 McCluskey Pottery. All pieces unique, all stories treasured.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

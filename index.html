@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McCluskey Pottery - Handcrafted Irish Porcelain Stories</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Pottery Wheel Loader -->
+    <div id="loader" class="loader">
+        <div class="pottery-wheel">
+            <div class="wheel-center"></div>
+            <div class="clay"></div>
+        </div>
+        <p class="loading-text">Shaping stories...</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-stamp">
+                    <span class="logo-mc">MC</span>
+                    <span class="logo-text">McCluskey<br>Pottery</span>
+                    <span class="logo-year">Est. Limavady</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Studio</a></li>
+                <li><a href="#collection" class="nav-link">Collection</a></li>
+                <li><a href="#process" class="nav-link">Process</a></li>
+                <li><a href="#stories" class="nav-link">Stories</a></li>
+                <li><a href="#visit" class="nav-link">Visit</a></li>
+                <li class="cart-icon">
+                    <a href="#cart" class="nav-link">
+                        <div class="cart-vessel">
+                            <span class="cart-count">0</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="brush-stroke brush-1"></div>
+            <div class="brush-stroke brush-2"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line-1">Every piece</span>
+                    <span class="title-line-2">tells a story</span>
+                </h1>
+                <div class="hero-divider"></div>
+                <p class="hero-subtitle">Handcrafted porcelain from the heart of Limavady</p>
+                <p class="hero-description">Where Irish tradition meets contemporary artistry,<br>shaped by the hands of Sean McCluskey</p>
+                <div class="hero-actions">
+                    <a href="#collection" class="btn-primary">Explore Collection</a>
+                    <a href="#process" class="btn-secondary">Watch the Process</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="featured-piece">
+                    <div class="piece-frame">
+                        <img src="images/hero-piece.jpg" alt="Featured Sláinte Piece" class="piece-image">
+                        <div class="piece-overlay">
+                            <span class="piece-tag">Featured</span>
+                        </div>
+                    </div>
+                    <div class="piece-info">
+                        <h3>Sláinte Collection</h3>
+                        <p>A celebration of Irish hospitality</p>
+                    </div>
+                </div>
+                <div class="decorative-elements">
+                    <div class="irish-knot"></div>
+                    <div class="pottery-tools"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Craft Philosophy -->
+    <section class="philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <div class="philosophy-quote">
+                    <svg class="quote-mark" viewBox="0 0 50 50">
+                        <path d="M10,20 Q5,10 15,10 Q20,10 20,15 Q20,25 10,25 Q5,25 5,20 Q5,10 15,5"/>
+                        <path d="M30,20 Q25,10 35,10 Q40,10 40,15 Q40,25 30,25 Q25,25 25,20 Q25,10 35,5"/>
+                    </svg>
+                    <blockquote>
+                        "In every piece of clay, I see a story waiting to be told - 
+                        a memory of Ireland's landscapes, traditions, and the warmth of its people."
+                    </blockquote>
+                    <cite>- Sean McCluskey, Master Potter</cite>
+                </div>
+                <div class="philosophy-values">
+                    <div class="value-card">
+                        <div class="value-icon">🤲</div>
+                        <h4>Handcrafted</h4>
+                        <p>Every piece shaped by hand with traditional techniques</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🍀</div>
+                        <h4>Irish Heritage</h4>
+                        <p>Inspired by centuries of Celtic artistry</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">✨</div>
+                        <h4>100% Porcelain</h4>
+                        <p>Only the finest materials for lasting beauty</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section id="collection" class="collection">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-decoration">The</span>
+                    Collection
+                </h2>
+                <p class="section-subtitle">Each piece is unique, just like the stories they tell</p>
+            </div>
+
+            <!-- Collection Filter -->
+            <div class="collection-filter">
+                <button class="filter-btn active" data-filter="all">All Pieces</button>
+                <button class="filter-btn" data-filter="irish">Irish Traditions</button>
+                <button class="filter-btn" data-filter="seasonal">Seasonal</button>
+                <button class="filter-btn" data-filter="special">Special Editions</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <h2 class="section-title">The Potter's Journey</h2>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Inspiration</h3>
+                        <p>Every piece begins with a story - from Irish folklore, local landscapes, or cherished memories</p>
+                    </div>
+                    <div class="step-visual"></div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Shaping</h3>
+                        <p>The porcelain takes form through patient hands, guided by years of tradition</p>
+                    </div>
+                    <div class="step-visual"></div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>First Firing</h3>
+                        <p>The kiln transforms raw clay into bisque, preparing it for its final beauty</p>
+                    </div>
+                    <div class="step-visual"></div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Glazing & Details</h3>
+                        <p>Colors are carefully applied, bringing each story to vibrant life</p>
+                    </div>
+                    <div class="step-visual"></div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>Final Firing</h3>
+                        <p>The final transformation seals the piece forever in porcelain perfection</p>
+                    </div>
+                    <div class="step-visual"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section id="stories" class="stories">
+        <div class="container">
+            <h2 class="section-title">Stories in Porcelain</h2>
+            <div class="stories-grid">
+                <article class="story-card">
+                    <div class="story-image">
+                        <div class="story-placeholder">Sláinte Story</div>
+                    </div>
+                    <div class="story-content">
+                        <h3>The Sláinte Tradition</h3>
+                        <p>In every Irish pub, the word 'Sláinte' rings out - a toast to health, happiness, and good company. This piece captures that moment of connection...</p>
+                        <a href="#" class="story-link">Read the full story →</a>
+                    </div>
+                </article>
+                <article class="story-card">
+                    <div class="story-image">
+                        <div class="story-placeholder">Swallow Story</div>
+                    </div>
+                    <div class="story-content">
+                        <h3>Return of the Swallows</h3>
+                        <p>Each spring, swallows return to Ireland, bringing hope and renewal. In Irish tradition, they symbolize safe homecoming and new beginnings...</p>
+                        <a href="#" class="story-link">Read the full story →</a>
+                    </div>
+                </article>
+                <article class="story-card">
+                    <div class="story-image">
+                        <div class="story-placeholder">Cottage Story</div>
+                    </div>
+                    <div class="story-content">
+                        <h3>The Irish Cottage</h3>
+                        <p>Whitewashed walls and thatched roofs dot the Irish countryside, each cottage a keeper of countless family stories passed down through generations...</p>
+                        <a href="#" class="story-link">Read the full story →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Section -->
+    <section id="visit" class="visit">
+        <div class="container">
+            <div class="visit-content">
+                <div class="visit-info">
+                    <h2>Visit Our Studio</h2>
+                    <p class="visit-intro">Experience the magic of pottery-making firsthand. Our studio in Limavady welcomes visitors to see the craft in action.</p>
+                    
+                    <div class="studio-details">
+                        <div class="detail-item">
+                            <h4>Studio Hours</h4>
+                            <p>Tuesday - Saturday: 10am - 5pm<br>
+                            Sunday: 12pm - 4pm<br>
+                            Closed Mondays</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Location</h4>
+                            <p>McCluskey Pottery Studio<br>
+                            Limavady, Co. Londonderry<br>
+                            Northern Ireland</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Contact</h4>
+                            <p>Tel: +44 (0) 28 7777 0000<br>
+                            Email: hello@mccluskeypottery.ie</p>
+                        </div>
+                    </div>
+
+                    <div class="visit-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">👁️</span>
+                            <span>Watch live demonstrations</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🎨</span>
+                            <span>Try your hand at the wheel</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🛍️</span>
+                            <span>Shop exclusive studio pieces</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visit-form">
+                    <h3>Send us a Message</h3>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h3>Join Our Circle</h3>
+                <p>Be the first to know about new collections and studio events</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">McCluskey Pottery</div>
+                    <p>Handcrafted with love in Limavady since forever</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">i</a>
+                        <a href="#" aria-label="Pinterest">p</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#collection">Shop Collection</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#stories">Stories</a></li>
+                        <li><a href="#visit">Visit Studio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-info">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                        <li><a href="#">Custom Orders</a></li>
+                        <li><a href="#">Gift Certificates</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 McCluskey Pottery. All pieces unique, all stories treasured.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Your Collection</h2>
+            <div id="cart-items" class="cart-items"></div>
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total">£0.00</span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/products-data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Porcelain Irish Swallow",
+      "price": "£48.00",
+      "mainImage": "https://siopaancarn.com/cdn/shop/files/received_1513656569379465.jpg",
+      "additionalImages": [
+        "https://siopaancarn.com/cdn/shop/files/received_277293328531722.jpg"
+      ],
+      "dimensions": "7.5 inches x 1.25 inches (19 x 3 cm)",
+      "description": "100% porcelain handmade in Ireland"
+    },
+    {
+      "id": 2,
+      "name": "Framed Porcelain Irish Cottage With Blue Door",
+      "price": "£48.00",
+      "mainImage": "https://siopaancarn.com/cdn/shop/files/PhotoRoom-20230922_153605.png",
+      "additionalImages": [
+        "https://siopaancarn.com/cdn/shop/files/received-1492472384841095.jpg"
+      ],
+      "dimensions": "6.5 inches (16 cm)",
+      "description": "Traditional Irish cottage scene"
+    },
+    {
+      "id": 3,
+      "name": "Framed Porcelain Irish Cottage Scene",
+      "price": "£48.00",
+      "mainImage": "https://siopaancarn.com/cdn/shop/files/PhotoRoom-20230922_150943.png",
+      "additionalImages": [],
+      "dimensions": "6.5 inches (16 cm)",
+      "description": "Traditional Irish cottage scene"
+    },
+    {
+      "id": 4,
+      "name": "Framed Porcelain Irish Cottage Mountain Scene (Green)",
+      "price": "£48.00",
+      "mainImage": "https://siopaancarn.com/cdn/shop/files/PhotoRoom-20230921_181224.png",
+      "additionalImages": [
+        "https://siopaancarn.com/cdn/shop/files/received-2275065662686248.jpg"
+      ],
+      "dimensions": "6.5 inches (16 cm)",
+      "description": "Traditional Irish cottage with mountain backdrop"
+    },
+    {
+      "id": 5,
+      "name": "Fáilte Magnet",
+      "price": "£9.95",
+      "mainImage": "https://siopaancarn.com/cdn/shop/files/PhotoRoom-20230921_135255.png",
+      "additionalImages": [
+        "https://siopaancarn.com/cdn/shop/files/PhotoRoom-20230921_125215.png"
+      ],
+      "dimensions": "1 inch (2.5 cm)",
+      "description": "Available in green and blue variations",
+      "variations": {
+        "green": "https://siopaancarn.com/cdn/shop/files/PhotoRoom-20230921_135255.png",
+        "blue": "https://siopaancarn.com/cdn/shop/files/PhotoRoom-20230921_125215.png"
+      }
+    }
+  ],
+  "extractionDate": "2025-07-12",
+  "source": "https://siopaancarn.com/collections/mccluskey-pottery"
+}

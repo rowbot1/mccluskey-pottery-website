@@ -1,0 +1,21 @@
+{
+  "name": "mccluskey-pottery-website",
+  "version": "1.0.0",
+  "description": "E-commerce website for McCluskey Pottery",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report",
+    "test:main": "playwright test -g 'Main Website'",
+    "test:admin": "playwright test -g 'Admin Panel'",
+    "test:integration": "playwright test -g 'Integration Tests'",
+    "test:performance": "playwright test -g 'Performance Tests'",
+    "test:a11y": "playwright test -g 'Accessibility Tests'"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.1"
+  },
+  "author": "McCluskey Pottery",
+  "license": "MIT"
+}

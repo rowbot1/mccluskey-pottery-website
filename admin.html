@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McCluskey Pottery - Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <div class="logo-stamp">
+                    <span class="logo-mc">MC</span>
+                    <span class="logo-text">McCluskey<br>Pottery</span>
+                </div>
+                <h2>Welcome Back</h2>
+                <p>Enter your password to access the admin panel</p>
+            </div>
+            <form id="login-form">
+                <input type="password" id="admin-password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <p class="login-hint">Hint: Use "pottery123" for demo</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="admin-dashboard" class="hidden">
+        <!-- Admin Navigation -->
+        <nav class="admin-nav">
+            <div class="admin-nav-header">
+                <div class="admin-logo">
+                    <h3>McCluskey Pottery</h3>
+                    <span>Admin Panel</span>
+                </div>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+            <ul class="admin-menu">
+                <li><a href="#" class="nav-item active" data-section="overview">📊 Overview</a></li>
+                <li><a href="#" class="nav-item" data-section="products">🏺 Products</a></li>
+                <li><a href="#" class="nav-item" data-section="orders">📦 Orders</a></li>
+                <li><a href="#" class="nav-item" data-section="add-product">➕ Add Product</a></li>
+                <li><a href="#" class="nav-item" data-section="settings">⚙️ Settings</a></li>
+            </ul>
+            <div class="admin-help">
+                <p>Need help?</p>
+                <a href="#" onclick="showHelp()">View Tutorial</a>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="admin-content">
+            <!-- Overview Section -->
+            <section id="overview-section" class="content-section active">
+                <h1>Welcome to Your Dashboard</h1>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-icon">🏺</span>
+                        <div class="stat-content">
+                            <h3 id="total-products">0</h3>
+                            <p>Total Products</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">📦</span>
+                        <div class="stat-content">
+                            <h3 id="total-orders">0</h3>
+                            <p>Total Orders</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">💰</span>
+                        <div class="stat-content">
+                            <h3 id="total-revenue">£0</h3>
+                            <p>Total Revenue</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">⭐</span>
+                        <div class="stat-content">
+                            <h3 id="best-seller">-</h3>
+                            <p>Best Seller</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-section">
+                    <h2>Recent Orders</h2>
+                    <div id="recent-orders" class="recent-orders-list">
+                        <p class="no-data">No orders yet. Share your website to start receiving orders!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section id="products-section" class="content-section">
+                <div class="section-header">
+                    <h1>Manage Products</h1>
+                    <button class="btn-primary" onclick="showSection('add-product')">Add New Product</button>
+                </div>
+                
+                <div class="products-table-container">
+                    <table class="products-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products-list">
+                            <!-- Products will be dynamically loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Orders Section -->
+            <section id="orders-section" class="content-section">
+                <h1>Order Management</h1>
+                <div class="orders-filters">
+                    <button class="filter-btn active" data-status="all">All Orders</button>
+                    <button class="filter-btn" data-status="pending">Pending</button>
+                    <button class="filter-btn" data-status="processing">Processing</button>
+                    <button class="filter-btn" data-status="completed">Completed</button>
+                </div>
+                <div id="orders-list" class="orders-list">
+                    <p class="no-data">No orders yet. Orders will appear here when customers make purchases.</p>
+                </div>
+            </section>
+
+            <!-- Add Product Section -->
+            <section id="add-product-section" class="content-section">
+                <h1>Add New Product</h1>
+                <form id="add-product-form" class="product-form">
+                    <div class="form-grid">
+                        <div class="form-left">
+                            <div class="form-group">
+                                <label>Product Name *</label>
+                                <input type="text" id="product-name" required placeholder="e.g., Irish Cottage Scene">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Product Story *</label>
+                                <textarea id="product-story" required placeholder="Tell the story behind this piece..."></textarea>
+                                <p class="form-hint">Share what makes this piece special - its inspiration, meaning, or the tradition it represents</p>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Category *</label>
+                                    <select id="product-category" required>
+                                        <option value="">Select category</option>
+                                        <option value="irish">Irish Traditions</option>
+                                        <option value="seasonal">Seasonal</option>
+                                        <option value="special">Special Editions</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Price (£) *</label>
+                                    <input type="number" id="product-price" required step="0.01" min="0" placeholder="0.00">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Stock Quantity</label>
+                                    <input type="number" id="product-stock" value="1" min="0" placeholder="1">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Special Badge (Optional)</label>
+                                <input type="text" id="product-badge" placeholder="e.g., Limited Edition, New">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="product-featured">
+                                    Feature this product (displays larger in shop)
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-right">
+                            <div class="form-group">
+                                <label>Product Photo *</label>
+                                <div class="image-upload-area" id="image-upload-area">
+                                    <input type="file" id="product-image" accept="image/*" required>
+                                    <div class="upload-placeholder">
+                                        <span class="upload-icon">📷</span>
+                                        <p>Click to upload photo</p>
+                                        <p class="upload-hint">Recommended: Square image, at least 800x800px</p>
+                                    </div>
+                                    <img id="image-preview" class="image-preview hidden" alt="Preview">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="resetProductForm()">Clear Form</button>
+                        <button type="submit" class="btn-primary">Add Product</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings-section" class="content-section">
+                <h1>Shop Settings</h1>
+                <div class="settings-grid">
+                    <div class="settings-card">
+                        <h3>Shop Information</h3>
+                        <form id="shop-settings-form">
+                            <div class="form-group">
+                                <label>Shop Email</label>
+                                <input type="email" id="shop-email" value="hello@mccluskeypottery.ie">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" id="shop-phone" value="+44 (0) 28 7777 0000">
+                            </div>
+                            <div class="form-group">
+                                <label>Shipping Message</label>
+                                <textarea id="shipping-message">Free shipping on orders over £50. All pieces carefully packaged.</textarea>
+                            </div>
+                            <button type="submit" class="btn-primary">Save Settings</button>
+                        </form>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3>Quick Actions</h3>
+                        <div class="quick-actions">
+                            <button onclick="exportProducts()" class="action-btn">📥 Export Products</button>
+                            <button onclick="exportOrders()" class="action-btn">📊 Export Orders</button>
+                            <button onclick="clearDemoData()" class="action-btn danger">🗑️ Clear Demo Data</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Edit Product Modal -->
+    <div id="edit-modal" class="modal hidden">
+        <div class="modal-content large">
+            <button class="modal-close" onclick="closeEditModal()">×</button>
+            <h2>Edit Product</h2>
+            <form id="edit-product-form" class="product-form">
+                <!-- Same form structure as add product, will be populated dynamically -->
+            </form>
+        </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="help-modal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeHelpModal()">×</button>
+            <h2>Getting Started Guide</h2>
+            <div class="help-content">
+                <h3>Welcome to your pottery shop admin panel! 🏺</h3>
+                <p>Here's how to get started:</p>
+                
+                <div class="help-steps">
+                    <div class="help-step">
+                        <span class="step-number">1</span>
+                        <div>
+                            <h4>Add Your Products</h4>
+                            <p>Click "Add Product" to upload photos and details of your pottery pieces.</p>
+                        </div>
+                    </div>
+                    <div class="help-step">
+                        <span class="step-number">2</span>
+                        <div>
+                            <h4>Tell Your Story</h4>
+                            <p>Each product should have a story - what inspired it, its meaning, or the tradition behind it.</p>
+                        </div>
+                    </div>
+                    <div class="help-step">
+                        <span class="step-number">3</span>
+                        <div>
+                            <h4>Manage Orders</h4>
+                            <p>When orders come in, you'll see them in the Orders section. Mark them as processing when you start making them!</p>
+                        </div>
+                    </div>
+                    <div class="help-step">
+                        <span class="step-number">4</span>
+                        <div>
+                            <h4>Stay Connected</h4>
+                            <p>Check your dashboard regularly for new orders and messages from customers.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="help-footer">Need more help? Email support@example.com</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

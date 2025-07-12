@@ -1,0 +1,189 @@
+# Page snapshot
+
+```yaml
+- navigation:
+  - text: MC McCluskey Pottery Est. Limavady
+  - list:
+    - listitem:
+      - link "Studio":
+        - /url: "#home"
+    - listitem:
+      - link "Collection":
+        - /url: "#collection"
+    - listitem:
+      - link "Process":
+        - /url: "#process"
+    - listitem:
+      - link "Stories":
+        - /url: "#stories"
+    - listitem:
+      - link "Visit":
+        - /url: "#visit"
+    - listitem:
+      - link "0":
+        - /url: "#cart"
+- heading "Every piece tells a story" [level=1]
+- paragraph: Handcrafted porcelain from the heart of Limavady
+- paragraph: Where Irish tradition meets contemporary artistry, shaped by the hands of Sean McCluskey
+- link "Explore Collection":
+  - /url: "#collection"
+- link "Watch the Process":
+  - /url: "#process"
+- img "Featured Sláinte Piece"
+- text: Featured
+- heading "Sláinte Collection" [level=3]
+- paragraph: A celebration of Irish hospitality
+- img
+- blockquote: "\"In every piece of clay, I see a story waiting to be told - a memory of Ireland's landscapes, traditions, and the warmth of its people.\""
+- text: "- Sean McCluskey, Master Potter 🤲"
+- heading "Handcrafted" [level=4]
+- paragraph: Every piece shaped by hand with traditional techniques
+- text: 🍀
+- heading "Irish Heritage" [level=4]
+- paragraph: Inspired by centuries of Celtic artistry
+- text: ✨
+- heading "100% Porcelain" [level=4]
+- paragraph: Only the finest materials for lasting beauty
+- heading "The Collection" [level=2]
+- paragraph: Each piece is unique, just like the stories they tell
+- button "All Pieces"
+- button "Irish Traditions"
+- button "Seasonal"
+- button "Special Editions"
+- img "Porcelain Irish Swallow"
+- text: "Porcelain Irish Swallow '\" style=\"width: 100%; height: 100%; object-fit: cover;\">"
+- heading "Porcelain Irish Swallow" [level=3]
+- paragraph: The beloved swallow returns each spring to Ireland, bringing hope and renewal. This traditional scene captures their graceful flight in fine porcelain.
+- paragraph: 7.5 inches x 1.25 inches (19 x 3 cm), presented on blue or beige mount with white frame
+- text: £48.00
+- button "Add to Cart"
+- img "Framed Porcelain Irish Cottage - Blue Door"
+- text: "Framed Porcelain Irish Cottage - Blue Door '\" style=\"width: 100%; height: 100%; object-fit: cover;\">"
+- heading "Framed Porcelain Irish Cottage - Blue Door" [level=3]
+- paragraph: A charming traditional Irish cottage with its distinctive blue door. This scene could be found anywhere across Ireland's beautiful countryside.
+- paragraph: 6.5 inches (16 cm), mounted on quality frame
+- text: £48.00
+- button "Add to Cart"
+- img "Framed Porcelain Irish Cottage Scene"
+- text: "Framed Porcelain Irish Cottage Scene '\" style=\"width: 100%; height: 100%; object-fit: cover;\">"
+- heading "Framed Porcelain Irish Cottage Scene" [level=3]
+- paragraph: Traditional Irish cottage nestled in the countryside, capturing the warmth and character of rural Irish life in exquisite porcelain detail.
+- paragraph: 6.5 inches (16 cm), beautifully framed
+- text: £48.00
+- button "Add to Cart"
+- img "Framed Porcelain Mountain Scene"
+- text: "Framed Porcelain Mountain Scene '\" style=\"width: 100%; height: 100%; object-fit: cover;\">"
+- heading "Framed Porcelain Mountain Scene" [level=3]
+- paragraph: Ireland's majestic mountains captured in delicate porcelain, with a traditional cottage in the foreground surrounded by emerald green fields.
+- paragraph: 6.5 inches (16 cm), presented in elegant frame
+- text: £48.00
+- button "Add to Cart"
+- img "Fáilte Magnet - Green"
+- text: "Fáilte Magnet - Green '\" style=\"width: 100%; height: 100%; object-fit: cover;\">"
+- heading "Fáilte Magnet - Green" [level=3]
+- paragraph: A warm Irish welcome for your home. 'Fáilte' means welcome in Irish - perfect for your fridge or any magnetic surface.
+- paragraph: 1 inch (2.5 cm) porcelain magnet
+- text: £9.95
+- button "Add to Cart"
+- img "Fáilte Magnet - Blue"
+- text: "Fáilte Magnet - Blue '\" style=\"width: 100%; height: 100%; object-fit: cover;\">"
+- heading "Fáilte Magnet - Blue" [level=3]
+- paragraph: Traditional Irish welcome in beautiful blue. A small piece of Ireland to brighten your day.
+- paragraph: 1 inch (2.5 cm) porcelain magnet
+- text: £9.95
+- button "Add to Cart"
+- heading "The Potter's Journey" [level=2]
+- text: "01"
+- heading "Inspiration" [level=3]
+- paragraph: Every piece begins with a story - from Irish folklore, local landscapes, or cherished memories
+- text: "02"
+- heading "Shaping" [level=3]
+- paragraph: The porcelain takes form through patient hands, guided by years of tradition
+- text: "03"
+- heading "First Firing" [level=3]
+- paragraph: The kiln transforms raw clay into bisque, preparing it for its final beauty
+- text: "04"
+- heading "Glazing & Details" [level=3]
+- paragraph: Colors are carefully applied, bringing each story to vibrant life
+- text: "05"
+- heading "Final Firing" [level=3]
+- paragraph: The final transformation seals the piece forever in porcelain perfection
+- heading "Stories in Porcelain" [level=2]
+- article:
+  - text: Sláinte Story
+  - heading "The Sláinte Tradition" [level=3]
+  - paragraph: In every Irish pub, the word 'Sláinte' rings out - a toast to health, happiness, and good company. This piece captures that moment of connection...
+  - link "Read the full story →":
+    - /url: "#"
+- article:
+  - text: Swallow Story
+  - heading "Return of the Swallows" [level=3]
+  - paragraph: Each spring, swallows return to Ireland, bringing hope and renewal. In Irish tradition, they symbolize safe homecoming and new beginnings...
+  - link "Read the full story →":
+    - /url: "#"
+- article:
+  - text: Cottage Story
+  - heading "The Irish Cottage" [level=3]
+  - paragraph: Whitewashed walls and thatched roofs dot the Irish countryside, each cottage a keeper of countless family stories passed down through generations...
+  - link "Read the full story →":
+    - /url: "#"
+- heading "Visit Our Studio" [level=2]
+- paragraph: Experience the magic of pottery-making firsthand. Our studio in Limavady welcomes visitors to see the craft in action.
+- heading "Studio Hours" [level=4]
+- paragraph: "Tuesday - Saturday: 10am - 5pm Sunday: 12pm - 4pm Closed Mondays"
+- heading "Location" [level=4]
+- paragraph: McCluskey Pottery Studio Limavady, Co. Londonderry Northern Ireland
+- heading "Contact" [level=4]
+- paragraph: "Tel: +44 (0) 28 7777 0000 Email: hello@mccluskeypottery.ie"
+- text: 👁️ Watch live demonstrations 🎨 Try your hand at the wheel 🛍️ Shop exclusive studio pieces
+- heading "Send us a Message" [level=3]
+- textbox "Your Name"
+- textbox "Your Email"
+- textbox "Your Message"
+- button "Send Message"
+- heading "Join Our Circle" [level=3]
+- paragraph: Be the first to know about new collections and studio events
+- textbox "Your email address"
+- button "Subscribe"
+- contentinfo:
+  - text: McCluskey Pottery
+  - paragraph: Handcrafted with love in Limavady since forever
+  - link "Facebook":
+    - /url: "#"
+    - text: f
+  - link "Instagram":
+    - /url: "#"
+    - text: i
+  - link "Pinterest":
+    - /url: "#"
+    - text: p
+  - heading "Quick Links" [level=4]
+  - list:
+    - listitem:
+      - link "Shop Collection":
+        - /url: "#collection"
+    - listitem:
+      - link "Our Process":
+        - /url: "#process"
+    - listitem:
+      - link "Stories":
+        - /url: "#stories"
+    - listitem:
+      - link "Visit Studio":
+        - /url: "#visit"
+  - heading "Information" [level=4]
+  - list:
+    - listitem:
+      - link "Shipping & Returns":
+        - /url: "#"
+    - listitem:
+      - link "Care Instructions":
+        - /url: "#"
+    - listitem:
+      - link "Custom Orders":
+        - /url: "#"
+    - listitem:
+      - link "Gift Certificates":
+        - /url: "#"
+  - paragraph: © 2024 McCluskey Pottery. All pieces unique, all stories treasured.
+```

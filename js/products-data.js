@@ -9,7 +9,7 @@ const mccluskeyProducts = [
         image: "images/swallow-main.svg",
         images: [
             "images/swallow-main.svg",
-            "images/swallow-alt.jpg"
+            "images/swallow-alt.svg"
         ],
         featured: true,
         details: "7.5 inches x 1.25 inches (19 x 3 cm), presented on blue or beige mount with white frame",
@@ -24,7 +24,7 @@ const mccluskeyProducts = [
         image: "images/cottage-blue-main.svg",
         images: [
             "images/cottage-blue-main.svg",
-            "images/cottage-blue-alt.jpg"
+            "images/cottage-blue-alt.svg"
         ],
         details: "6.5 inches (16 cm), mounted on quality frame",
         stock: 3
@@ -48,7 +48,7 @@ const mccluskeyProducts = [
         image: "images/mountain-scene-main.svg",
         images: [
             "images/mountain-scene-main.svg",
-            "images/mountain-scene-alt.jpg"
+            "images/mountain-scene-alt.svg"
         ],
         featured: true,
         details: "6.5 inches (16 cm), presented in elegant frame",

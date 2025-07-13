@@ -1237,6 +1237,31 @@ select.error {
 
 /* Responsive */
 @media (max-width: 768px) {
+    /* Adjust text sizes for mobile */
+    .hero-title {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+    
+    .section-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+    
+    .blog-card {
+        margin-bottom: 30px;
+    }
+    
+    .philosophy-quote blockquote {
+        font-size: 1.5rem;
+    }
+    
+    .stories-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .story-card {
+        max-width: 100%;
+    }
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -1256,6 +1281,14 @@ select.error {
 
     .menu-toggle {
         display: flex;
+    }
+    
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
     }
 
     .hero-content {

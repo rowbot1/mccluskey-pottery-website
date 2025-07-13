@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found - McCluskey Pottery</title>
-    <link rel="stylesheet" href="/mccluskey-pottery-website/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
@@ -16,22 +17,165 @@
             justify-content: center;
             text-align: center;
             padding: 20px;
+            background: var(--porcelain);
+            position: relative;
+            overflow: hidden;
         }
-        .error-content h1 {
-            font-size: 120px;
+        
+        .error-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+        
+        .error-404 {
+            font-family: 'Amatic SC', cursive;
+            font-size: clamp(100px, 20vw, 200px);
             color: var(--terracotta);
+            margin: 0;
+            line-height: 0.8;
+            position: relative;
+        }
+        
+        .error-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(24px, 4vw, 36px);
+            color: var(--charcoal);
+            margin: 20px 0;
+        }
+        
+        .error-message {
+            font-size: 18px;
+            color: var(--warm-gray);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        /* Broken pottery illustration */
+        .broken-pottery {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .pottery-piece {
+            fill: var(--clay-brown);
+        }
+        
+        /* Decorative elements */
+        .error-decoration {
+            position: absolute;
+            opacity: 0.3;
+        }
+        
+        .decoration-1 {
+            top: 10%;
+            left: 10%;
+            transform: rotate(15deg);
+        }
+        
+        .decoration-2 {
+            bottom: 10%;
+            right: 10%;
+            transform: rotate(-20deg);
+        }
+        
+        .decoration-3 {
+            top: 20%;
+            right: 15%;
+            transform: rotate(45deg);
+        }
+        
+        /* Button override for better visibility */
+        .error-page .btn-primary {
+            font-size: 18px;
+            padding: 15px 40px;
+        }
+        
+        /* Navigation hint */
+        .nav-hint {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--pottery-cream);
+        }
+        
+        .nav-hint p {
+            color: var(--warm-gray);
             margin-bottom: 20px;
+        }
+        
+        .quick-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .quick-links a {
+            color: var(--irish-green);
+            text-decoration: none;
+            padding: 5px 10px;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-links a:hover {
+            border-bottom-color: var(--irish-green);
         }
     </style>
 </head>
 <body>
+    <!-- Broken pottery SVG background -->
+    <svg class="broken-pottery" width="400" height="400" viewBox="0 0 400 400">
+        <!-- Broken vase pieces -->
+        <path class="pottery-piece" d="M200 100 Q180 110 180 130 L185 150 L200 140 Z" transform="rotate(10 200 200)"/>
+        <path class="pottery-piece" d="M200 140 L185 150 Q185 170 190 180 L205 170 Z" transform="rotate(-15 200 200)"/>
+        <path class="pottery-piece" d="M205 170 L190 180 Q195 190 200 195 L215 185 Z" transform="rotate(25 200 200)"/>
+        <path class="pottery-piece" d="M215 185 L200 195 Q205 200 210 195 L220 180 Z" transform="rotate(-30 200 200)"/>
+        <path class="pottery-piece" d="M200 100 Q220 110 220 130 L215 150 L200 140 Z" transform="rotate(-20 200 200)"/>
+        
+        <!-- Crack lines -->
+        <path d="M180 130 L200 200 L220 130" fill="none" stroke="var(--clay-brown)" stroke-width="1" opacity="0.5"/>
+    </svg>
+    
+    <!-- Decorative elements -->
+    <svg class="error-decoration decoration-1" width="60" height="60" viewBox="0 0 60 60">
+        <circle cx="30" cy="30" r="25" fill="none" stroke="var(--irish-green)" stroke-width="2"/>
+        <path d="M30 10 Q20 25 30 40 Q40 25 30 10" fill="none" stroke="var(--irish-green)" stroke-width="1"/>
+    </svg>
+    
+    <svg class="error-decoration decoration-2" width="80" height="80" viewBox="0 0 80 80">
+        <path d="M40 20 Q30 25 30 35 Q30 45 35 50 Q40 52 40 52 Q40 52 45 50 Q50 45 50 35 Q50 25 40 20" 
+              fill="none" stroke="var(--terracotta)" stroke-width="2"/>
+    </svg>
+    
+    <svg class="error-decoration decoration-3" width="50" height="50" viewBox="0 0 50 50">
+        <rect x="15" y="15" width="20" height="20" fill="none" stroke="var(--pottery-cream)" stroke-width="3" rx="2"/>
+    </svg>
+    
+    <!-- Main content -->
     <div class="error-page">
         <div class="error-content">
-            <h1>404</h1>
-            <h2>This page seems to have broken in the kiln!</h2>
-            <p>Let's get you back to the studio.</p>
-            <br>
-            <a href="/mccluskey-pottery-website/" class="btn-primary">Return Home</a>
+            <h1 class="error-404">404</h1>
+            <h2 class="error-title">This piece seems to have cracked in the kiln!</h2>
+            <p class="error-message">
+                Sometimes even the best potters have pieces that don't make it through the firing. 
+                Let's get you back to the studio where the magic happens.
+            </p>
+            <a href="/" class="btn-primary">Return to Studio</a>
+            
+            <div class="nav-hint">
+                <p>Or perhaps you were looking for:</p>
+                <div class="quick-links">
+                    <a href="/#collection">Our Collection</a>
+                    <a href="/#process">The Process</a>
+                    <a href="/#stories">Stories</a>
+                    <a href="/#visit">Visit Us</a>
+                </div>
+            </div>
         </div>
     </div>
 </body>

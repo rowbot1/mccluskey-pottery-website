@@ -1,0 +1,22 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15" fill="#F5E6D3" stroke="#2A5434" stroke-width="1"/>
+  
+  <!-- Simplified pottery wheel and vessel -->
+  <g transform="translate(16, 16)">
+    <!-- Pottery wheel base -->
+    <ellipse cx="0" cy="8" rx="10" ry="3" fill="#8B6B47" opacity="0.7"/>
+    
+    <!-- Clay vessel -->
+    <path d="M0 -6 Q-4 -4 -4 0 Q-4 4 -2 6 Q-1 7 0 7 Q1 7 2 6 Q4 4 4 0 Q4 -4 0 -6" 
+          fill="#C65D00" stroke="#8B4513" stroke-width="0.5"/>
+    
+    <!-- Potter's hands (simplified) -->
+    <path d="M-6 0 Q-4 -1 -4 0" fill="none" stroke="#8B6B47" stroke-width="0.5" opacity="0.5"/>
+    <path d="M6 0 Q4 -1 4 0" fill="none" stroke="#8B6B47" stroke-width="0.5" opacity="0.5"/>
+    
+    <!-- M for McCluskey -->
+    <text x="0" y="4" font-family="Georgia, serif" font-size="8" font-weight="bold" 
+          text-anchor="middle" fill="#FAFAF8">M</text>
+  </g>
+</svg>

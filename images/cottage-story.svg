@@ -1,0 +1,45 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky background -->
+  <rect width="400" height="300" fill="#E8F4F8"/>
+  
+  <!-- Rolling hills -->
+  <path d="M0 200 Q100 180 200 190 T400 200 L400 300 L0 300 Z" fill="#8FBC8F"/>
+  <path d="M0 220 Q150 200 300 210 T400 220 L400 300 L0 300 Z" fill="#7CB77C"/>
+  
+  <!-- Cottage -->
+  <rect x="150" y="150" width="100" height="80" fill="#FFFFFF" stroke="#333" stroke-width="2"/>
+  
+  <!-- Thatched roof -->
+  <path d="M140 150 L200 100 L260 150 Z" fill="#D4A574" stroke="#333" stroke-width="2"/>
+  <path d="M140 150 Q200 140 260 150" fill="#C8965A" stroke="none"/>
+  
+  <!-- Door -->
+  <rect x="185" y="180" width="30" height="50" fill="#4169E1" stroke="#333" stroke-width="2"/>
+  <circle cx="208" cy="205" r="2" fill="#FFD700"/>
+  
+  <!-- Windows -->
+  <rect x="160" y="170" width="20" height="20" fill="#87CEEB" stroke="#333" stroke-width="2"/>
+  <rect x="220" y="170" width="20" height="20" fill="#87CEEB" stroke="#333" stroke-width="2"/>
+  
+  <!-- Window cross bars -->
+  <line x1="170" y1="170" x2="170" y2="190" stroke="#333" stroke-width="1"/>
+  <line x1="160" y1="180" x2="180" y2="180" stroke="#333" stroke-width="1"/>
+  <line x1="230" y1="170" x2="230" y2="190" stroke="#333" stroke-width="1"/>
+  <line x1="220" y1="180" x2="240" y2="180" stroke="#333" stroke-width="1"/>
+  
+  <!-- Chimney -->
+  <rect x="220" y="120" width="20" height="40" fill="#8B4513" stroke="#333" stroke-width="2"/>
+  
+  <!-- Smoke -->
+  <circle cx="230" cy="110" r="8" fill="#CCCCCC" opacity="0.6"/>
+  <circle cx="235" cy="100" r="10" fill="#CCCCCC" opacity="0.5"/>
+  <circle cx="240" cy="88" r="12" fill="#CCCCCC" opacity="0.4"/>
+  
+  <!-- Garden details -->
+  <circle cx="120" cy="230" r="15" fill="#90EE90" opacity="0.8"/>
+  <circle cx="280" cy="225" r="12" fill="#FFB6C1" opacity="0.8"/>
+  <circle cx="300" cy="235" r="10" fill="#FFB6C1" opacity="0.8"/>
+  
+  <!-- Path to door -->
+  <path d="M200 230 L200 280 L210 280 L210 230" fill="#D2691E" stroke="#333" stroke-width="1"/>
+</svg>

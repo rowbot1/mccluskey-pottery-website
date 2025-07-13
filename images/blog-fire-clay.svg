@@ -1,0 +1,38 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#2C2C2C"/>
+  
+  <!-- Kiln opening -->
+  <rect x="100" y="50" width="200" height="200" rx="20" fill="#1A1A1A"/>
+  
+  <!-- Fire/Flames -->
+  <g opacity="0.9">
+    <path d="M150 200 Q140 150 160 120 Q150 160 170 140 Q160 180 180 160 Q170 200 200 180 Q190 220 220 200 Q210 160 230 140 Q220 180 240 160 Q230 200 250 180" 
+          fill="#FF6347" opacity="0.8"/>
+    <path d="M170 200 Q165 170 175 150 Q170 180 185 165 Q180 195 195 185 Q190 210 205 200 Q200 180 215 165 Q210 195 225 185 Q220 210 230 200" 
+          fill="#FFD700" opacity="0.7"/>
+    <path d="M190 200 Q188 185 192 175 Q190 190 198 182 Q196 198 204 192 Q202 205 210 200 Q208 190 216 182 Q214 198 218 192" 
+          fill="#FFFFE0" opacity="0.6"/>
+  </g>
+  
+  <!-- Pottery pieces in kiln -->
+  <ellipse cx="180" cy="210" rx="25" ry="15" fill="#8B6B47" opacity="0.8"/>
+  <ellipse cx="220" cy="210" rx="25" ry="15" fill="#8B6B47" opacity="0.8"/>
+  <ellipse cx="200" cy="200" rx="20" ry="12" fill="#D4A574" opacity="0.8"/>
+  
+  <!-- Glowing effect -->
+  <circle cx="200" cy="150" r="80" fill="#FF6347" opacity="0.2"/>
+  <circle cx="200" cy="150" r="60" fill="#FFD700" opacity="0.2"/>
+  
+  <!-- Smoke wisps -->
+  <path d="M150 40 Q145 20 150 0" fill="none" stroke="#666666" stroke-width="3" opacity="0.5"/>
+  <path d="M200 40 Q205 20 200 0" fill="none" stroke="#666666" stroke-width="3" opacity="0.5"/>
+  <path d="M250 40 Q245 20 250 0" fill="none" stroke="#666666" stroke-width="3" opacity="0.5"/>
+  
+  <!-- Kiln bricks texture -->
+  <line x1="100" y1="100" x2="300" y2="100" stroke="#333" stroke-width="1" opacity="0.5"/>
+  <line x1="100" y1="150" x2="300" y2="150" stroke="#333" stroke-width="1" opacity="0.5"/>
+  <line x1="150" y1="50" x2="150" y2="250" stroke="#333" stroke-width="1" opacity="0.5"/>
+  <line x1="200" y1="50" x2="200" y2="250" stroke="#333" stroke-width="1" opacity="0.5"/>
+  <line x1="250" y1="50" x2="250" y2="250" stroke="#333" stroke-width="1" opacity="0.5"/>
+</svg>

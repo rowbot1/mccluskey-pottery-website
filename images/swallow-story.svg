@@ -1,0 +1,63 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky gradient background -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F0E68C;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#skyGradient)"/>
+  
+  <!-- Sun -->
+  <circle cx="320" cy="80" r="30" fill="#FFD700" opacity="0.8"/>
+  
+  <!-- Swallows in flight -->
+  <!-- Swallow 1 -->
+  <g transform="translate(100, 100)">
+    <path d="M0 0 Q-20 -5 -30 -15 Q-20 -8 -10 -10 L0 0 L10 -10 Q20 -8 30 -15 Q20 -5 0 0" 
+          fill="#1C1C1C" stroke="none"/>
+    <ellipse cx="0" cy="0" rx="8" ry="4" fill="#1C1C1C"/>
+    <path d="M0 0 L0 15 L-5 20 L0 18 L5 20 L0 15" fill="#1C1C1C"/>
+    <circle cx="-3" cy="-2" r="1" fill="#FFF"/>
+    <path d="M-10 5 Q0 3 10 5" fill="#C65D00" stroke="none"/>
+  </g>
+  
+  <!-- Swallow 2 -->
+  <g transform="translate(250, 60) scale(0.8) rotate(15)">
+    <path d="M0 0 Q-20 -5 -30 -15 Q-20 -8 -10 -10 L0 0 L10 -10 Q20 -8 30 -15 Q20 -5 0 0" 
+          fill="#1C1C1C" stroke="none"/>
+    <ellipse cx="0" cy="0" rx="8" ry="4" fill="#1C1C1C"/>
+    <path d="M0 0 L0 15 L-5 20 L0 18 L5 20 L0 15" fill="#1C1C1C"/>
+    <circle cx="-3" cy="-2" r="1" fill="#FFF"/>
+    <path d="M-10 5 Q0 3 10 5" fill="#C65D00" stroke="none"/>
+  </g>
+  
+  <!-- Swallow 3 -->
+  <g transform="translate(180, 150) scale(1.2) rotate(-10)">
+    <path d="M0 0 Q-20 -5 -30 -15 Q-20 -8 -10 -10 L0 0 L10 -10 Q20 -8 30 -15 Q20 -5 0 0" 
+          fill="#1C1C1C" stroke="none"/>
+    <ellipse cx="0" cy="0" rx="8" ry="4" fill="#1C1C1C"/>
+    <path d="M0 0 L0 15 L-5 20 L0 18 L5 20 L0 15" fill="#1C1C1C"/>
+    <circle cx="-3" cy="-2" r="1" fill="#FFF"/>
+    <path d="M-10 5 Q0 3 10 5" fill="#C65D00" stroke="none"/>
+  </g>
+  
+  <!-- Irish countryside silhouette -->
+  <path d="M0 250 Q100 240 200 245 T400 250 L400 300 L0 300 Z" fill="#2A5434" opacity="0.8"/>
+  
+  <!-- Celtic pattern border -->
+  <g transform="translate(50, 270)">
+    <path d="M0 0 Q10 -10 20 0 Q10 10 0 0 M20 0 Q30 -10 40 0 Q30 10 20 0 M40 0 Q50 -10 60 0 Q50 10 40 0" 
+          fill="none" stroke="#D4A574" stroke-width="2"/>
+  </g>
+  
+  <g transform="translate(290, 270)">
+    <path d="M0 0 Q10 -10 20 0 Q10 10 0 0 M20 0 Q30 -10 40 0 Q30 10 20 0 M40 0 Q50 -10 60 0 Q50 10 40 0" 
+          fill="none" stroke="#D4A574" stroke-width="2"/>
+  </g>
+  
+  <!-- Small cottage silhouette -->
+  <rect x="300" y="220" width="40" height="30" fill="#1C1C1C" opacity="0.6"/>
+  <polygon points="295,220 320,200 345,220" fill="#1C1C1C" opacity="0.6"/>
+  <rect x="330" y="210" width="8" height="15" fill="#1C1C1C" opacity="0.6"/>
+</svg>

@@ -1,0 +1,77 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Framed background -->
+  <rect x="30" y="30" width="340" height="340" fill="#654321" stroke="#4A3728" stroke-width="3"/>
+  <rect x="40" y="40" width="320" height="320" fill="#FAFAF8"/>
+  
+  <!-- Sky with gradient -->
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#F0E68C;stop-opacity:0.4" />
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="320" height="140" fill="url(#skyGrad)"/>
+  
+  <!-- Mountains -->
+  <path d="M40 180 L120 100 L180 140 L240 80 L300 120 L360 180 Z" fill="#696969" opacity="0.8"/>
+  <path d="M40 180 L120 100 L150 120 L180 140 Z" fill="#808080" opacity="0.6"/>
+  <path d="M240 80 L280 100 L300 120 Z" fill="#808080" opacity="0.6"/>
+  
+  <!-- Snow caps -->
+  <path d="M120 100 L140 120 L100 120 Z" fill="#FFFFFF" opacity="0.9"/>
+  <path d="M240 80 L260 100 L220 100 Z" fill="#FFFFFF" opacity="0.9"/>
+  
+  <!-- Middle ground hills -->
+  <path d="M40 240 Q150 220 260 230 T360 240 L360 300 L40 300 Z" fill="#228B22" opacity="0.9"/>
+  <path d="M40 260 Q180 240 320 250 T360 260 L360 320 L40 320 Z" fill="#2E8B57" opacity="0.8"/>
+  
+  <!-- Cottage in foreground -->
+  <g transform="translate(150, 250)">
+    <!-- Cottage -->
+    <rect x="-25" y="0" width="50" height="30" fill="#FFFFFF" stroke="#333" stroke-width="1.5"/>
+    
+    <!-- Roof -->
+    <path d="M-30 0 L0 -20 L30 0 Z" fill="#8B4513" stroke="#333" stroke-width="1.5"/>
+    
+    <!-- Door -->
+    <rect x="-5" y="10" width="10" height="20" fill="#DC143C" stroke="#333" stroke-width="1"/>
+    <circle cx="2" cy="20" r="0.5" fill="#FFD700"/>
+    
+    <!-- Windows -->
+    <rect x="-18" y="5" width="10" height="10" fill="#87CEEB" stroke="#333" stroke-width="1"/>
+    <rect x="8" y="5" width="10" height="10" fill="#87CEEB" stroke="#333" stroke-width="1"/>
+    
+    <!-- Chimney -->
+    <rect x="15" y="-15" width="8" height="15" fill="#8B4513" stroke="#333" stroke-width="1"/>
+    <circle cx="19" cy="-18" r="3" fill="#D3D3D3" opacity="0.6"/>
+  </g>
+  
+  <!-- Path leading to cottage -->
+  <path d="M150 280 Q140 320 130 360" fill="none" stroke="#D2691E" stroke-width="3" opacity="0.7"/>
+  <path d="M150 280 Q160 320 170 360" fill="none" stroke="#D2691E" stroke-width="3" opacity="0.7"/>
+  
+  <!-- Sheep on hillside -->
+  <g transform="translate(250, 245)">
+    <ellipse cx="0" cy="0" rx="8" ry="6" fill="#FFFFFF"/>
+    <ellipse cx="-3" cy="-2" rx="4" ry="3" fill="#000000" opacity="0.8"/>
+    <circle cx="-5" cy="-2" r="0.5" fill="#FFFFFF"/>
+  </g>
+  
+  <g transform="translate(280, 255)">
+    <ellipse cx="0" cy="0" rx="6" ry="4" fill="#FFFFFF"/>
+    <ellipse cx="-2" cy="-1" rx="3" ry="2" fill="#000000" opacity="0.8"/>
+  </g>
+  
+  <!-- Stone wall in foreground -->
+  <rect x="40" y="320" width="320" height="10" fill="#A9A9A9" stroke="#696969" stroke-width="1"/>
+  <line x1="80" y1="320" x2="80" y2="330" stroke="#696969" stroke-width="1"/>
+  <line x1="120" y1="320" x2="120" y2="330" stroke="#696969" stroke-width="1"/>
+  <line x1="160" y1="320" x2="160" y2="330" stroke="#696969" stroke-width="1"/>
+  <line x1="200" y1="320" x2="200" y2="330" stroke="#696969" stroke-width="1"/>
+  <line x1="240" y1="320" x2="240" y2="330" stroke="#696969" stroke-width="1"/>
+  <line x1="280" y1="320" x2="280" y2="330" stroke="#696969" stroke-width="1"/>
+  <line x1="320" y1="320" x2="320" y2="330" stroke="#696969" stroke-width="1"/>
+  
+  <!-- Artist signature -->
+  <text x="200" y="350" font-family="Georgia, serif" font-size="9" text-anchor="middle" fill="#8B6B47" opacity="0.5">McCluskey Pottery</text>
+</svg>

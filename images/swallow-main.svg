@@ -1,0 +1,39 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Porcelain plate background -->
+  <circle cx="200" cy="200" r="180" fill="#FAFAF8" stroke="#E0E0E0" stroke-width="2"/>
+  <circle cx="200" cy="200" r="170" fill="#FAFAF8" stroke="#F0F0F0" stroke-width="1"/>
+  
+  <!-- Decorative rim pattern -->
+  <g transform="translate(200, 200)">
+    <path d="M0,-160 Q10,-165 20,-160 Q10,-155 0,-160 M20,-160 Q30,-165 40,-160 Q30,-155 20,-160 M40,-160 Q50,-165 60,-160 Q50,-155 40,-160" 
+          fill="none" stroke="#4A6FA5" stroke-width="1" opacity="0.5"/>
+  </g>
+  
+  <!-- Central swallow design -->
+  <g transform="translate(200, 180) scale(2)">
+    <path d="M0 0 Q-20 -5 -30 -15 Q-20 -8 -10 -10 L0 0 L10 -10 Q20 -8 30 -15 Q20 -5 0 0" 
+          fill="#1C1C1C" stroke="#2C2C2C" stroke-width="0.5"/>
+    <ellipse cx="0" cy="0" rx="8" ry="4" fill="#1C1C1C"/>
+    <path d="M0 0 L0 15 L-5 20 L0 18 L5 20 L0 15" fill="#1C1C1C"/>
+    <circle cx="-3" cy="-2" r="1" fill="#FFF"/>
+    <path d="M-10 5 Q0 3 10 5" fill="#C65D00" stroke="none"/>
+  </g>
+  
+  <!-- Irish landscape silhouette at bottom -->
+  <path d="M50 320 Q200 310 350 320" fill="none" stroke="#2A5434" stroke-width="2" opacity="0.7"/>
+  <path d="M80 315 Q200 305 320 315" fill="none" stroke="#2A5434" stroke-width="1" opacity="0.5"/>
+  
+  <!-- Small decorative swallows -->
+  <g transform="translate(120, 120) scale(0.8) rotate(-20)">
+    <path d="M0 0 Q-15 -4 -20 -10 Q-15 -6 -8 -8 L0 0 L8 -8 Q15 -6 20 -10 Q15 -4 0 0" 
+          fill="#4A6FA5" opacity="0.6"/>
+  </g>
+  
+  <g transform="translate(280, 140) scale(0.6) rotate(25)">
+    <path d="M0 0 Q-15 -4 -20 -10 Q-15 -6 -8 -8 L0 0 L8 -8 Q15 -6 20 -10 Q15 -4 0 0" 
+          fill="#4A6FA5" opacity="0.6"/>
+  </g>
+  
+  <!-- Artist signature style mark -->
+  <text x="200" y="350" font-family="Georgia, serif" font-size="12" text-anchor="middle" fill="#8B6B47" opacity="0.7">McCluskey</text>
+</svg>

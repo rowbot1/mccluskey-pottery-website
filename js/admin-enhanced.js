@@ -1114,6 +1114,70 @@ class AdminUI {
         oscillator.start();
         oscillator.stop(audioContext.currentTime + 0.1);
     }
+    
+    exportProducts() {
+        const dataStr = JSON.stringify(this.dataManager.data.products, null, 2);
+        const dataBlob = new Blob([dataStr], {type: 'application/json'});
+        const url = URL.createObjectURL(dataBlob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'mccluskey-pottery-products.json';
+        link.click();
+        AdminUI.showNotification('Products exported successfully!', 'success');
+    }
+
+    exportOrders() {
+        const dataStr = JSON.stringify(this.dataManager.data.orders, null, 2);
+        const dataBlob = new Blob([dataStr], {type: 'application/json'});
+        const url = URL.createObjectURL(dataBlob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'mccluskey-pottery-orders.json';
+        link.click();
+        AdminUI.showNotification('Orders exported successfully!', 'success');
+    }
+
+    clearDemoData() {
+        const modal = this.createConfirmModal(
+            'Clear All Data',
+            'Are you sure you want to clear all demo data? This action cannot be undone.',
+            () => {
+                localStorage.removeItem('mccluskeyAdminData');
+                localStorage.removeItem('mccluskeyProducts');
+                this.dataManager.data = {
+                    products: [],
+                    orders: [],
+                    settings: {
+                        email: 'hello@mccluskeypottery.ie',
+                        phone: '+44 28 7772 1234',
+                        shippingMessage: 'Free shipping on orders over £50. All pieces carefully packaged.',
+                        orderNotifications: true,
+                        lowStockAlert: 5,
+                        currency: '£',
+                        taxRate: 0
+                    },
+                    analytics: {
+                        pageViews: 0,
+                        cartAbandoned: 0,
+                        conversionRate: 0
+                    }
+                };
+                this.dataManager.saveData();
+                this.showSection('overview');
+                AdminUI.showNotification('All data cleared successfully', 'success');
+            }
+        );
+        
+        document.body.appendChild(modal);
+    }
+
+    showHelp() {
+        const helpModal = document.getElementById('help-modal');
+        if (helpModal) {
+            helpModal.classList.remove('hidden');
+            helpModal.style.display = 'flex';
+        }
+    }
 
     static showNotification(message, type = 'success') {
         const notification = document.createElement('div');
@@ -1410,6 +1474,23 @@ function initializeAdminPanel() {
     
     // Make UI globally accessible for inline handlers
     window.adminUI = adminUI;
+    
+    // Make necessary functions globally accessible
+    window.editProduct = (id) => adminUI.editProduct(id);
+    window.deleteProduct = (id) => adminUI.deleteProduct(id);
+    window.duplicateProduct = (id) => adminUI.duplicateProduct(id);
+    window.resetProductForm = () => adminUI.resetProductForm();
+    window.showSection = (section) => adminUI.showSection(section);
+    window.logout = () => authManager.logout();
+    window.updateOrderStatus = (orderId, status) => adminUI.updateOrderStatus(orderId, status);
+    window.viewOrderDetails = (orderId) => adminUI.viewOrderDetails(orderId);
+    window.printPackingSlip = (orderId) => adminUI.printPackingSlip(orderId);
+    window.exportProducts = () => adminUI.exportProducts();
+    window.exportOrders = () => adminUI.exportOrders();
+    window.clearDemoData = () => adminUI.clearDemoData();
+    window.showHelp = () => adminUI.showHelp();
+    window.closeHelpModal = () => document.getElementById('help-modal')?.classList.add('hidden');
+    window.closeEditModal = () => adminUI.resetProductForm();
     
     // Set up order integration
     setupOrderIntegration();

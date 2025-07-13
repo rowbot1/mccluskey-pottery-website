@@ -509,11 +509,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: rgba(245, 230, 211, 0.3);
 }
 
 .image-upload-area:hover {
     border-color: var(--irish-green);
     background: var(--pottery-cream);
+}
+
+.image-upload-area.drag-hover {
+    background: var(--pottery-cream);
+    border-color: var(--irish-green);
+    border-width: 3px;
+}
+
+.image-upload-area.loading {
+    pointer-events: none;
+    opacity: 0.7;
 }
 
 .image-upload-area input[type="file"] {
@@ -526,10 +538,25 @@
     cursor: pointer;
 }
 
+.upload-placeholder {
+    pointer-events: none;
+}
+
 .upload-icon {
     font-size: 48px;
     display: block;
     margin-bottom: 10px;
+    color: var(--irish-green);
+}
+
+.upload-placeholder p {
+    margin: 10px 0;
+    color: var(--charcoal);
+}
+
+.upload-placeholder p:first-of-type {
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .upload-hint {

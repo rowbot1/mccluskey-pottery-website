@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Your Pottery Care Guide - McCluskey Pottery</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .download-hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, #F5E6D3 0%, #E8C4A0 100%);
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .download-box {
+            background: white;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .download-icon {
+            font-size: 80px;
+            color: var(--irish-green);
+            margin-bottom: 30px;
+        }
+        
+        .download-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 30px;
+            background: var(--irish-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: var(--charcoal);
+            transform: translateY(-2px);
+        }
+        
+        .download-btn.secondary {
+            background: var(--terracotta);
+        }
+        
+        .instructions {
+            background: var(--pottery-cream);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        
+        .instructions h3 {
+            color: var(--irish-green);
+            margin-bottom: 15px;
+        }
+        
+        .instructions ul {
+            margin-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .download-box {
+                padding: 40px 20px;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+            }
+            
+            .download-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <div class="logo-stamp">
+                        <svg class="logo-pottery-wheel" viewBox="0 0 60 60" width="35" height="35">
+                            <!-- Pottery wheel base -->
+                            <circle cx="30" cy="45" r="12" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+                            <ellipse cx="30" cy="45" rx="12" ry="3" fill="currentColor" opacity="0.2"/>
+                            
+                            <!-- Clay vessel being shaped -->
+                            <path d="M30 15 Q22 18 22 28 Q22 38 26 42 Q28 44 30 44 Q32 44 34 42 Q38 38 38 28 Q38 18 30 15" 
+                                  fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M22 28 Q30 26 38 28" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+                            
+                            <!-- Potter's hands (subtle) -->
+                            <path d="M18 28 Q15 26 15 24 Q15 22 17 22 Q19 22 19 24 L19 30" 
+                                  fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                            <path d="M42 28 Q45 26 45 24 Q45 22 43 22 Q41 22 41 24 L41 30" 
+                                  fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                            
+                            <!-- Spinning motion lines -->
+                            <path d="M15 45 Q30 43 45 45" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                            <path d="M20 45 Q30 47 40 45" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                        </svg>
+                        <span class="logo-text">McCluskey<br>Pottery</span>
+                        <span class="logo-year">Est. Limavady</span>
+                    </div>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Studio</a></li>
+                <li><a href="index.html#collection" class="nav-link">Collection</a></li>
+                <li><a href="index.html#process" class="nav-link">Process</a></li>
+                <li><a href="index.html#stories" class="nav-link">Stories</a></li>
+                <li><a href="blog/index.html" class="nav-link">Journal</a></li>
+                <li><a href="index.html#visit" class="nav-link">Visit</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Download Section -->
+    <section class="download-hero">
+        <div class="container">
+            <div class="download-box">
+                <div class="download-icon">📖</div>
+                <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 36px; color: var(--irish-green); margin-bottom: 20px;">
+                    Thank You for Your Purchase!
+                </h1>
+                <p style="font-size: 20px; color: var(--warm-gray); margin-bottom: 30px;">
+                    Your Complete Guide to Caring for Handmade Pottery is ready to download.
+                </p>
+                
+                <div class="download-buttons">
+                    <a href="McCluskey-Pottery-Care-Guide.pdf" class="download-btn" download>
+                        <span>📥</span>
+                        <span>Download Full Guide<br><small>(High Quality - 281KB)</small></span>
+                    </a>
+                    <a href="McCluskey-Pottery-Care-Guide-Web.pdf" class="download-btn secondary" download>
+                        <span>📱</span>
+                        <span>Download Web Version<br><small>(Smaller File - 278KB)</small></span>
+                    </a>
+                </div>
+                
+                <p style="color: var(--warm-gray); font-size: 14px;">
+                    You can also <a href="pottery-care-guide.html" style="color: var(--irish-green);">read the guide online</a> anytime.
+                </p>
+                
+                <div class="instructions">
+                    <h3>Quick Tips:</h3>
+                    <ul>
+                        <li>Save the PDF to your device for offline access</li>
+                        <li>Print pages 3-12 for a handy kitchen reference</li>
+                        <li>Share with friends who love handmade pottery</li>
+                        <li>Refer to Chapter 4 for stain removal emergencies</li>
+                        <li>Check Chapter 8 for seasonal care reminders</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid #eee;">
+                    <p style="font-style: italic; color: var(--warm-gray);">
+                        "Thank you for investing in the care of your pottery. With proper care, your pieces will serve you beautifully for generations."
+                    </p>
+                    <p style="margin-top: 20px;">
+                        <a href="index.html" class="btn-outline" style="text-decoration: none;">Continue Shopping</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">McCluskey Pottery</div>
+                    <p>Handcrafted with love in Limavady since forever</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#collection">Shop Collection</a></li>
+                        <li><a href="index.html#process">Our Process</a></li>
+                        <li><a href="index.html#stories">Stories</a></li>
+                        <li><a href="index.html#visit">Visit Studio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 McCluskey Pottery. All pieces unique, all stories treasured.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

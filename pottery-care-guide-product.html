@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pottery Care Guide - Digital Download - McCluskey Pottery</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .guide-hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, #F5E6D3 0%, #E8C4A0 100%);
+            text-align: center;
+        }
+        
+        .guide-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .guide-preview {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .guide-details h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            color: var(--irish-green);
+            margin-bottom: 20px;
+        }
+        
+        .guide-details h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: var(--clay-brown);
+            margin: 30px 0 15px;
+        }
+        
+        .price-box {
+            background: var(--pottery-cream);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .price {
+            font-size: 48px;
+            color: var(--irish-green);
+            font-family: 'Amatic SC', cursive;
+        }
+        
+        .price-note {
+            font-size: 14px;
+            color: var(--warm-gray);
+            margin-top: 10px;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--irish-green);
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .preview-pages {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .preview-page {
+            background: white;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            font-size: 12px;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .preview-page::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(transparent, white);
+        }
+        
+        .testimonial-box {
+            background: var(--porcelain);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            font-style: italic;
+            text-align: center;
+        }
+        
+        .guide-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .bonus-box {
+            background: #E8F5E9;
+            border: 2px dashed var(--irish-green);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .preview-pages {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <div class="logo-stamp">
+                        <svg class="logo-pottery-wheel" viewBox="0 0 60 60" width="35" height="35">
+                            <!-- Pottery wheel base -->
+                            <circle cx="30" cy="45" r="12" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+                            <ellipse cx="30" cy="45" rx="12" ry="3" fill="currentColor" opacity="0.2"/>
+                            
+                            <!-- Clay vessel being shaped -->
+                            <path d="M30 15 Q22 18 22 28 Q22 38 26 42 Q28 44 30 44 Q32 44 34 42 Q38 38 38 28 Q38 18 30 15" 
+                                  fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M22 28 Q30 26 38 28" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+                            
+                            <!-- Potter's hands (subtle) -->
+                            <path d="M18 28 Q15 26 15 24 Q15 22 17 22 Q19 22 19 24 L19 30" 
+                                  fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                            <path d="M42 28 Q45 26 45 24 Q45 22 43 22 Q41 22 41 24 L41 30" 
+                                  fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+                            
+                            <!-- Spinning motion lines -->
+                            <path d="M15 45 Q30 43 45 45" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                            <path d="M20 45 Q30 47 40 45" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                        </svg>
+                        <span class="logo-text">McCluskey<br>Pottery</span>
+                        <span class="logo-year">Est. Limavady</span>
+                    </div>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Studio</a></li>
+                <li><a href="index.html#collection" class="nav-link">Collection</a></li>
+                <li><a href="index.html#process" class="nav-link">Process</a></li>
+                <li><a href="index.html#stories" class="nav-link">Stories</a></li>
+                <li><a href="blog/index.html" class="nav-link">Journal</a></li>
+                <li><a href="index.html#visit" class="nav-link">Visit</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="guide-hero">
+        <div class="container">
+            <h1 class="hero-title">The Complete Guide to<br>Caring for Your Handmade Pottery</h1>
+            <p style="font-size: 24px; margin-top: 20px; font-style: italic;">
+                12 chapters of pottery wisdom • 40+ pages • Lifetime access
+            </p>
+        </div>
+    </section>
+
+    <!-- Guide Content -->
+    <section class="guide-content">
+        <div class="guide-grid">
+            <!-- Preview Section -->
+            <div class="guide-preview">
+                <h2>Preview</h2>
+                <p>
+                    This comprehensive guide shares decades of pottery wisdom, from daily care routines to emergency fixes, seasonal considerations to the science behind proper care.
+                </p>
+                
+                <div class="preview-pages">
+                    <div class="preview-page">
+                        <h4>Chapter 1: Welcome</h4>
+                        <p>Your handmade pottery is more than a functional object – it's a piece of living art that will evolve with your life, gathering stories and developing character with each use...</p>
+                        <p>When you bring home a piece of McCluskey pottery, you're welcoming something unique into your life. Unlike mass-produced ceramics, each handmade piece has its own personality...</p>
+                    </div>
+                    <div class="preview-page">
+                        <h4>Chapter 4: Deep Cleaning</h4>
+                        <p>Tea and Coffee Stains: These common stains are easily removed with this gentle method: Make a paste with baking soda and water (3:1 ratio)...</p>
+                        <p>Cutlery Marks: Those grey lines from cutlery are metal deposits on the glaze surface, not damage...</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-box">
+                    <p>
+                        "This guide transformed how I care for my pottery collection. I never knew about temperature acclimatisation or why my teapot shouldn't be soaped inside. Worth every penny!"
+                    </p>
+                    <p style="margin-top: 15px;">- Sarah M., Pottery Collector</p>
+                </div>
+            </div>
+            
+            <!-- Details Section -->
+            <div class="guide-details">
+                <h2>Your Complete Pottery Care Resource</h2>
+                
+                <p>
+                    Whether you've just received your first piece of handmade pottery or you're a seasoned collector, this guide provides everything you need to know to keep your pottery beautiful and functional for generations.
+                </p>
+                
+                <h3>What's Included:</h3>
+                <ul class="features-list">
+                    <li>12 comprehensive chapters covering every aspect of pottery care</li>
+                    <li>Step-by-step cleaning guides for every type of stain</li>
+                    <li>Seasonal care calendar for year-round maintenance</li>
+                    <li>Emergency first aid for chips, cracks, and breaks</li>
+                    <li>The science behind pottery care explained simply</li>
+                    <li>Storage solutions to maximise space and protection</li>
+                    <li>Specific care instructions for different pottery types</li>
+                    <li>Mindful care rituals to enhance your daily life</li>
+                    <li>Professional tips from a master potter</li>
+                    <li>Beautiful PDF format - print or keep digital</li>
+                </ul>
+                
+                <div class="price-box">
+                    <div class="price">€12</div>
+                    <div class="price-note">Instant download • Lifetime access • Print-friendly format</div>
+                </div>
+                
+                <div class="bonus-box">
+                    <h3>🎁 Special Bonus</h3>
+                    <p>
+                        Purchase any pottery piece and receive this guide FREE!<br>
+                        Your caring hands deserve caring knowledge.
+                    </p>
+                </div>
+                
+                <h3>Perfect For:</h3>
+                <ul>
+                    <li>New pottery owners wanting to care for their pieces properly</li>
+                    <li>Collectors looking to preserve their investments</li>
+                    <li>Gift-givers who want to include care instructions</li>
+                    <li>Anyone who values sustainability and longevity</li>
+                </ul>
+                
+                <div class="guide-cta">
+                    <button class="btn-primary" onclick="addPotteryGuideToCart()">
+                        Add to Cart - €12
+                    </button>
+                    <p style="margin-top: 15px; font-size: 14px; color: var(--warm-gray);">
+                        Download link sent immediately after purchase
+                    </p>
+                </div>
+                
+                <div style="background: var(--pottery-cream); padding: 20px; border-radius: 10px; margin-top: 30px;">
+                    <h4 style="margin-bottom: 10px;">Why This Guide Exists</h4>
+                    <p style="font-size: 14px; line-height: 1.6;">
+                        "After years of answering the same care questions, I realized people need more than quick answers – they need understanding. This guide shares everything I've learned about pottery care, so your pieces can live the long, beautiful lives they deserve." - McCluskey Pottery
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">McCluskey Pottery</div>
+                    <p>Handcrafted with love in Limavady since forever</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#collection">Shop Collection</a></li>
+                        <li><a href="index.html#process">Our Process</a></li>
+                        <li><a href="index.html#stories">Stories</a></li>
+                        <li><a href="index.html#visit">Visit Studio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 McCluskey Pottery. All pieces unique, all stories treasured.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function addPotteryGuideToCart() {
+            // Add the digital guide to cart
+            const guide = {
+                id: 'pottery-care-guide',
+                name: 'Complete Pottery Care Guide (Digital)',
+                price: 12,
+                image: 'images/pottery-care-guide-cover.jpg',
+                quantity: 1,
+                type: 'digital'
+            };
+            
+            // Get existing cart or create new one
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Check if guide already in cart
+            const existingIndex = cart.findIndex(item => item.id === guide.id);
+            if (existingIndex === -1) {
+                cart.push(guide);
+                
+                // Show success message
+                alert('Pottery Care Guide added to cart! This is a digital product - you\'ll receive a download link after purchase.');
+                
+                // Update cart count if function exists
+                if (typeof updateCartCount === 'function') {
+                    updateCartCount();
+                }
+            } else {
+                alert('The Pottery Care Guide is already in your cart!');
+            }
+            
+            // Save cart
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    </script>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

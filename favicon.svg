@@ -1,22 +1,60 @@
 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background circle -->
-  <circle cx="16" cy="16" r="15" fill="#F5E6D3" stroke="#2A5434" stroke-width="1"/>
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#F5E6D3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8D4BB;stop-opacity:1" />
+    </radialGradient>
+    
+    <linearGradient id="vesselGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4A574;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8855A;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="miniShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="0.5"/>
+      <feOffset dx="0" dy="0.5" result="offsetblur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.2"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
   
-  <!-- Simplified pottery wheel and vessel -->
+  <!-- Background with subtle gradient -->
+  <circle cx="16" cy="16" r="15" fill="url(#bgGrad)" stroke="#C8965A" stroke-width="1"/>
+  
+  <!-- Simplified but elegant pottery design -->
   <g transform="translate(16, 16)">
-    <!-- Pottery wheel base -->
-    <ellipse cx="0" cy="8" rx="10" ry="3" fill="#8B6B47" opacity="0.7"/>
+    <!-- Wheel base -->
+    <ellipse cx="0" cy="8" rx="10" ry="3" fill="#8B6B47" opacity="0.8" filter="url(#miniShadow)"/>
+    <ellipse cx="0" cy="8" rx="8" ry="2.5" fill="#7A5A3A" opacity="0.6"/>
     
-    <!-- Clay vessel -->
-    <path d="M0 -6 Q-4 -4 -4 0 Q-4 4 -2 6 Q-1 7 0 7 Q1 7 2 6 Q4 4 4 0 Q4 -4 0 -6" 
-          fill="#C65D00" stroke="#8B4513" stroke-width="0.5"/>
+    <!-- Vessel with gradient -->
+    <path d="M0 -6 C-5 -5, -6 -2, -6 2 C-6 6, -4 8, -2 9 C-1 9.5, 1 9.5, 2 9 C4 8, 6 6, 6 2 C6 -2, 5 -5, 0 -6Z" 
+          fill="url(#vesselGrad)" 
+          filter="url(#miniShadow)"/>
     
-    <!-- Potter's hands (simplified) -->
-    <path d="M-6 0 Q-4 -1 -4 0" fill="none" stroke="#8B6B47" stroke-width="0.5" opacity="0.5"/>
-    <path d="M6 0 Q4 -1 4 0" fill="none" stroke="#8B6B47" stroke-width="0.5" opacity="0.5"/>
+    <!-- Interior detail -->
+    <ellipse cx="0" cy="-5" rx="4.5" ry="2" fill="#00000015"/>
     
-    <!-- M for McCluskey -->
-    <text x="0" y="4" font-family="Georgia, serif" font-size="8" font-weight="bold" 
-          text-anchor="middle" fill="#FAFAF8">M</text>
+    <!-- Rim highlight -->
+    <ellipse cx="0" cy="-6" rx="5" ry="1.5" fill="none" stroke="#F5E6D3" stroke-width="0.5" opacity="0.8"/>
+    
+    <!-- Subtle hand marks -->
+    <path d="M-6 2 Q0 1.5 6 2" fill="none" stroke="#C8965A" stroke-width="0.3" opacity="0.5"/>
+    
+    <!-- Motion indicator -->
+    <path d="M-8 8 A 8 2.5 0 0 1 8 8" fill="none" stroke="#8B6B47" stroke-width="0.3" opacity="0.4" stroke-dasharray="0.5,1"/>
   </g>
+  
+  <!-- Elegant M initial integrated into design -->
+  <path d="M10 19 L10 15 L13 18 L16 15 L19 18 L22 15 L22 19" 
+        fill="none" 
+        stroke="#FAFAF8" 
+        stroke-width="1.5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        opacity="0.9"/>
 </svg>

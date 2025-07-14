@@ -1,0 +1,215 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Sky gradient -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E6F3FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F5F5DC;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Thatch gradient with texture -->
+    <linearGradient id="thatchGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4A574;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C8965A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8855A;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Cottage wall gradient -->
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFEFA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F5F5F0;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Blue door gradient -->
+    <radialGradient id="doorGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#5A7FDB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4169E1;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Window glass effect -->
+    <radialGradient id="windowGrad" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#B0E0E6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#87CEEB;stop-opacity:0.9" />
+    </radialGradient>
+    
+    <!-- Soft shadow filter -->
+    <filter id="softShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="2" dy="3" result="offsetblur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.2"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Thatch texture pattern -->
+    <pattern id="thatchTexture" x="0" y="0" width="4" height="2" patternUnits="userSpaceOnUse">
+      <path d="M0 0 L1 2 M1 0 L2 2 M2 0 L3 2 M3 0 L4 2" stroke="#A67C52" stroke-width="0.2" opacity="0.4"/>
+    </pattern>
+    
+    <!-- Stone wall texture -->
+    <pattern id="stoneTexture" x="0" y="0" width="20" height="15" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="9" height="7" fill="none" stroke="#DDD" stroke-width="0.3" opacity="0.3"/>
+      <rect x="10" y="0" width="9" height="7" fill="none" stroke="#DDD" stroke-width="0.3" opacity="0.3"/>
+      <rect x="5" y="8" width="9" height="7" fill="none" stroke="#DDD" stroke-width="0.3" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background with sky gradient -->
+  <rect width="400" height="400" fill="url(#skyGrad)"/>
+  
+  <!-- Soft clouds -->
+  <ellipse cx="100" cy="80" rx="40" ry="20" fill="#FFFFFF" opacity="0.4"/>
+  <ellipse cx="120" cy="85" rx="30" ry="15" fill="#FFFFFF" opacity="0.3"/>
+  <ellipse cx="280" cy="100" rx="45" ry="18" fill="#FFFFFF" opacity="0.3"/>
+  
+  <!-- Irish countryside backdrop -->
+  <path d="M0 250 Q100 240 200 245 Q300 240 400 250 L400 400 L0 400 Z" 
+        fill="#3A5F3A" opacity="0.2"/>
+  <path d="M0 280 Q150 270 300 275 Q350 270 400 280 L400 400 L0 400 Z" 
+        fill="#2A5434" opacity="0.3"/>
+  
+  <!-- Main cottage with enhanced detail -->
+  <g transform="translate(200, 200)" filter="url(#softShadow)">
+    <!-- Cottage shadow on ground -->
+    <ellipse cx="0" cy="42" rx="80" ry="15" fill="#00000015"/>
+    
+    <!-- Cottage walls with gradient and texture -->
+    <rect x="-60" y="-20" width="120" height="60" fill="url(#wallGrad)"/>
+    <rect x="-60" y="-20" width="120" height="60" fill="url(#stoneTexture)"/>
+    
+    <!-- Wall weathering and details -->
+    <path d="M-60 35 Q0 33 60 35" stroke="#E0E0E0" stroke-width="1" opacity="0.5"/>
+    <rect x="-58" y="-18" width="116" height="2" fill="#F0F0F0" opacity="0.8"/>
+    
+    <!-- Thatched roof with layers -->
+    <path d="M-75 -20 L0 -65 L75 -20 Z" fill="url(#thatchGrad)"/>
+    <path d="M-75 -20 L0 -65 L75 -20 Z" fill="url(#thatchTexture)"/>
+    
+    <!-- Roof layers for depth -->
+    <path d="M-70 -25 Q0 -35 70 -25" fill="#C8965A" opacity="0.8"/>
+    <path d="M-65 -28 Q0 -38 65 -28" fill="#B8855A" opacity="0.6"/>
+    <path d="M-60 -31 Q0 -41 60 -31" fill="#A8754A" opacity="0.4"/>
+    
+    <!-- Roof ridge detail -->
+    <path d="M-72 -22 L0 -63 L72 -22" fill="none" stroke="#8B6B47" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Blue door with details -->
+    <g transform="translate(0, 22)">
+      <!-- Door frame -->
+      <rect x="-12" y="-19" width="24" height="39" fill="#8B6B47" opacity="0.8"/>
+      <!-- Main door -->
+      <rect x="-10" y="-17" width="20" height="35" fill="url(#doorGrad)"/>
+      <!-- Door panels -->
+      <rect x="-8" y="-15" width="7" height="14" fill="none" stroke="#3A5CC6" stroke-width="0.5"/>
+      <rect x="1" y="-15" width="7" height="14" fill="none" stroke="#3A5CC6" stroke-width="0.5"/>
+      <rect x="-8" y="2" width="7" height="14" fill="none" stroke="#3A5CC6" stroke-width="0.5"/>
+      <rect x="1" y="2" width="7" height="14" fill="none" stroke="#3A5CC6" stroke-width="0.5"/>
+      <!-- Door knob -->
+      <circle cx="5" cy="0" r="1.5" fill="#FFD700"/>
+      <circle cx="5" cy="0" r="1" fill="#FFA500" opacity="0.8"/>
+      <!-- Door step -->
+      <rect x="-12" y="18" width="24" height="3" fill="#8B7355" opacity="0.6"/>
+    </g>
+    
+    <!-- Windows with curtains and reflections -->
+    <!-- Left window -->
+    <g transform="translate(-35, 5)">
+      <rect x="-12" y="-12" width="24" height="24" fill="#654321" opacity="0.8"/>
+      <rect x="-10" y="-10" width="20" height="20" fill="url(#windowGrad)"/>
+      <!-- Window panes -->
+      <line x1="0" y1="-10" x2="0" y2="10" stroke="#654321" stroke-width="1.5"/>
+      <line x1="-10" y1="0" x2="10" y2="0" stroke="#654321" stroke-width="1.5"/>
+      <!-- Curtains visible through window -->
+      <path d="M-8 -8 Q-6 -6 -6 8 M8 -8 Q6 -6 6 8" stroke="#FFE4E1" stroke-width="2" opacity="0.5"/>
+      <!-- Window box flowers -->
+      <rect x="-10" y="10" width="20" height="4" fill="#8B4513" opacity="0.8"/>
+      <circle cx="-5" cy="12" r="2" fill="#FF69B4" opacity="0.8"/>
+      <circle cx="0" cy="13" r="2" fill="#FFB6C1" opacity="0.8"/>
+      <circle cx="5" cy="12" r="2" fill="#FF1493" opacity="0.8"/>
+    </g>
+    
+    <!-- Right window -->
+    <g transform="translate(35, 5)">
+      <rect x="-12" y="-12" width="24" height="24" fill="#654321" opacity="0.8"/>
+      <rect x="-10" y="-10" width="20" height="20" fill="url(#windowGrad)"/>
+      <!-- Window panes -->
+      <line x1="0" y1="-10" x2="0" y2="10" stroke="#654321" stroke-width="1.5"/>
+      <line x1="-10" y1="0" x2="10" y2="0" stroke="#654321" stroke-width="1.5"/>
+      <!-- Curtains -->
+      <path d="M-8 -8 Q-6 -6 -6 8 M8 -8 Q6 -6 6 8" stroke="#FFE4E1" stroke-width="2" opacity="0.5"/>
+      <!-- Window box -->
+      <rect x="-10" y="10" width="20" height="4" fill="#8B4513" opacity="0.8"/>
+      <circle cx="-5" cy="12" r="2" fill="#FFB6C1" opacity="0.8"/>
+      <circle cx="0" cy="13" r="2" fill="#FF69B4" opacity="0.8"/>
+      <circle cx="5" cy="12" r="2" fill="#FF1493" opacity="0.8"/>
+    </g>
+    
+    <!-- Chimney with smoke -->
+    <g transform="translate(45, -40)">
+      <rect x="-8" y="-15" width="16" height="30" fill="#8B4513"/>
+      <rect x="-8" y="-15" width="16" height="30" fill="url(#stoneTexture)"/>
+      <rect x="-8" y="-15" width="16" height="3" fill="#654321" opacity="0.8"/>
+      <!-- Smoke -->
+      <ellipse cx="0" cy="-20" rx="6" ry="8" fill="#CCCCCC" opacity="0.3"/>
+      <ellipse cx="2" cy="-28" rx="8" ry="10" fill="#CCCCCC" opacity="0.25"/>
+      <ellipse cx="4" cy="-38" rx="10" ry="12" fill="#CCCCCC" opacity="0.2"/>
+      <ellipse cx="6" cy="-50" rx="12" ry="14" fill="#CCCCCC" opacity="0.15"/>
+    </g>
+  </g>
+  
+  <!-- Garden details -->
+  <g transform="translate(200, 280)">
+    <!-- Stone path with perspective -->
+    <g opacity="0.8">
+      <ellipse cx="0" cy="10" rx="20" ry="8" fill="#A9A9A9"/>
+      <ellipse cx="0" cy="25" rx="18" ry="7" fill="#A9A9A9" opacity="0.9"/>
+      <ellipse cx="0" cy="40" rx="16" ry="6" fill="#A9A9A9" opacity="0.8"/>
+      <ellipse cx="0" cy="55" rx="14" ry="5" fill="#A9A9A9" opacity="0.7"/>
+      <ellipse cx="0" cy="70" rx="12" ry="4" fill="#A9A9A9" opacity="0.6"/>
+    </g>
+    
+    <!-- Garden borders with variety of flowers -->
+    <g transform="translate(-80, 0)">
+      <!-- Roses -->
+      <circle cx="0" cy="0" r="6" fill="#FF1493" opacity="0.8"/>
+      <circle cx="-2" cy="-2" r="4" fill="#FF69B4" opacity="0.6"/>
+      <path d="M-3 0 Q0 -2 3 0 Q0 2 -3 0" fill="#FF1493" opacity="0.5"/>
+      <!-- Leaves -->
+      <ellipse cx="-5" cy="5" rx="3" ry="5" fill="#228B22" opacity="0.7" transform="rotate(-30 -5 5)"/>
+      <ellipse cx="5" cy="5" rx="3" ry="5" fill="#228B22" opacity="0.7" transform="rotate(30 5 5)"/>
+    </g>
+    
+    <g transform="translate(80, 0)">
+      <!-- Daisies -->
+      <circle cx="0" cy="0" r="3" fill="#FFD700"/>
+      <circle cx="-5" cy="0" r="2" fill="#FFFFFF" opacity="0.9"/>
+      <circle cx="5" cy="0" r="2" fill="#FFFFFF" opacity="0.9"/>
+      <circle cx="0" cy="-5" r="2" fill="#FFFFFF" opacity="0.9"/>
+      <circle cx="0" cy="5" r="2" fill="#FFFFFF" opacity="0.9"/>
+      <!-- Stems -->
+      <line x1="0" y1="5" x2="0" y2="15" stroke="#228B22" stroke-width="1.5"/>
+    </g>
+    
+    <!-- Wild grass patches -->
+    <path d="M-100 10 Q-98 5 -96 10 M-94 10 Q-92 5 -90 10 M-88 10 Q-86 5 -84 10" 
+          stroke="#2A5434" stroke-width="1" opacity="0.6"/>
+    <path d="M100 10 Q98 5 96 10 M94 10 Q92 5 90 10 M88 10 Q86 5 84 10" 
+          stroke="#2A5434" stroke-width="1" opacity="0.6"/>
+  </g>
+  
+  <!-- Birds in sky -->
+  <path d="M50 60 Q55 58 60 60 M320 80 Q325 78 330 80 M150 50 Q155 48 160 50" 
+        stroke="#333333" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- Artistic frame -->
+  <rect x="40" y="40" width="320" height="320" fill="none" stroke="#8B7355" stroke-width="4" opacity="0.3"/>
+  
+  <!-- Signature with decorative element -->
+  <g transform="translate(200, 350)">
+    <path d="M-40 0 Q-20 -5 0 0 Q20 -5 40 0" stroke="#8B6B47" stroke-width="0.5" opacity="0.4"/>
+    <text x="0" y="8" font-family="Georgia, serif" font-size="12" font-style="italic" 
+          text-anchor="middle" fill="#8B6B47" opacity="0.7">McCluskey Pottery</text>
+  </g>
+</svg>

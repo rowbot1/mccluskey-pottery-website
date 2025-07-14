@@ -1,0 +1,147 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Fire gradients -->
+    <radialGradient id="fireGrad1" cx="50%" cy="100%">
+      <stop offset="0%" style="stop-color:#FFFFE0;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#FF6347;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B0000;stop-opacity:1" />
+    </radialGradient>
+    
+    <radialGradient id="fireGrad2" cx="50%" cy="100%">
+      <stop offset="0%" style="stop-color:#FFFACD;stop-opacity:0.9" />
+      <stop offset="40%" style="stop-color:#FFA500;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#DC143C;stop-opacity:0.6" />
+    </radialGradient>
+    
+    <!-- Kiln interior gradient -->
+    <radialGradient id="kilnGrad" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#1A0A0A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Glowing pottery gradient -->
+    <radialGradient id="glowingPottery" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FF6347;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Animated glow filter -->
+    <filter id="glowFilter">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Heat distortion filter -->
+    <filter id="heatDistortion">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" result="turbulence" seed="2"/>
+      <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    
+    <!-- Smoke filter -->
+    <filter id="smokeFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="turbulence" seed="5"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect width="400" height="300" fill="#0A0A0A"/>
+  
+  <!-- Kiln interior with depth -->
+  <g transform="translate(200, 150)">
+    <!-- Kiln opening with perspective -->
+    <path d="M-100 -100 L-120 -120 L-120 120 L-100 100 Z" fill="#1A1A1A"/>
+    <path d="M100 -100 L120 -120 L120 120 L100 100 Z" fill="#1A1A1A"/>
+    <path d="M-120 -120 L120 -120 L100 -100 L-100 -100 Z" fill="#2A2A2A"/>
+    <rect x="-100" y="-100" width="200" height="200" rx="20" fill="url(#kilnGrad)"/>
+    
+    <!-- Kiln brick texture -->
+    <g opacity="0.3">
+      <line x1="-100" y1="-50" x2="100" y2="-50" stroke="#333" stroke-width="1"/>
+      <line x1="-100" y1="0" x2="100" y2="0" stroke="#333" stroke-width="1"/>
+      <line x1="-100" y1="50" x2="100" y2="50" stroke="#333" stroke-width="1"/>
+      <line x1="-50" y1="-100" x2="-50" y2="100" stroke="#333" stroke-width="1"/>
+      <line x1="0" y1="-100" x2="0" y2="100" stroke="#333" stroke-width="1"/>
+      <line x1="50" y1="-100" x2="50" y2="100" stroke="#333" stroke-width="1"/>
+    </g>
+  </g>
+  
+  <!-- Dramatic fire effect -->
+  <g transform="translate(200, 200)" filter="url(#heatDistortion)">
+    <!-- Base flames -->
+    <path d="M-60 0 Q-50 -40 -40 -60 Q-45 -30 -35 -50 Q-40 -20 -30 -40 Q-35 -10 -25 -30 Q-30 0 -20 -20 Q-25 10 -15 -10 Q-20 20 -10 0 Q-15 30 -5 10 Q-10 40 0 20 Q-5 50 5 30 Q0 40 10 20 Q5 30 15 10 Q10 20 20 0 Q15 10 25 -10 Q20 0 30 -20 Q25 -10 35 -30 Q30 -20 40 -40 Q35 -30 45 -50 Q40 -40 50 -60 Q45 -30 55 -50 Q50 -20 60 0" 
+          fill="url(#fireGrad1)" opacity="0.8" filter="url(#glowFilter)"/>
+    
+    <!-- Mid-layer flames -->
+    <path d="M-40 0 Q-35 -25 -30 -40 Q-33 -20 -25 -35 Q-28 -15 -20 -30 Q-23 -10 -15 -25 Q-18 -5 -10 -20 Q-13 0 -5 -15 Q-8 5 0 -10 Q-3 10 5 -5 Q2 5 10 -10 Q7 0 15 -15 Q12 -5 20 -20 Q17 -10 25 -25 Q22 -15 30 -30 Q27 -20 35 -35 Q32 -25 40 0" 
+          fill="url(#fireGrad2)" opacity="0.7" filter="url(#glowFilter)"/>
+    
+    <!-- Inner hot flames -->
+    <path d="M-20 0 Q-15 -15 -10 -25 Q-12 -10 -5 -20 Q-7 -5 0 -15 Q-2 0 5 -10 Q3 -5 10 -15 Q8 -10 15 -20 Q13 -15 20 0" 
+          fill="#FFFFE0" opacity="0.6" filter="url(#glowFilter)"/>
+  </g>
+  
+  <!-- Pottery pieces with glowing effect -->
+  <g transform="translate(200, 210)">
+    <!-- Large central vessel -->
+    <ellipse cx="0" cy="0" rx="30" ry="18" fill="url(#glowingPottery)" filter="url(#glowFilter)"/>
+    <ellipse cx="0" cy="-5" rx="25" ry="15" fill="#D2691E" opacity="0.8"/>
+    <path d="M-25 -5 Q0 -8 25 -5" stroke="#FFA500" stroke-width="1" opacity="0.6"/>
+    
+    <!-- Left vessel -->
+    <ellipse cx="-45" cy="5" rx="20" ry="12" fill="url(#glowingPottery)" filter="url(#glowFilter)" opacity="0.9"/>
+    <ellipse cx="-45" cy="2" rx="17" ry="10" fill="#CD853F" opacity="0.7"/>
+    
+    <!-- Right vessel -->
+    <ellipse cx="45" cy="5" rx="20" ry="12" fill="url(#glowingPottery)" filter="url(#glowFilter)" opacity="0.9"/>
+    <ellipse cx="45" cy="2" rx="17" ry="10" fill="#CD853F" opacity="0.7"/>
+    
+    <!-- Glowing cracks showing heat -->
+    <path d="M-10 -5 L-8 0 L-6 5 M10 -5 L8 0 L6 5" stroke="#FFD700" stroke-width="0.5" opacity="0.8"/>
+  </g>
+  
+  <!-- Heat waves and glow -->
+  <g transform="translate(200, 150)" opacity="0.3">
+    <circle cx="0" cy="0" r="120" fill="url(#fireGrad1)" filter="url(#glowFilter)"/>
+    <circle cx="0" cy="0" r="100" fill="url(#fireGrad2)" filter="url(#glowFilter)"/>
+  </g>
+  
+  <!-- Smoke wisps -->
+  <g transform="translate(200, 50)" opacity="0.4" filter="url(#smokeFilter)">
+    <path d="M-30 0 Q-35 -20 -30 -40 Q-25 -60 -30 -80 Q-35 -100 -30 -120" 
+          fill="none" stroke="#666666" stroke-width="8"/>
+    <path d="M0 0 Q5 -20 0 -40 Q-5 -60 0 -80 Q5 -100 0 -120" 
+          fill="none" stroke="#666666" stroke-width="10"/>
+    <path d="M30 0 Q25 -20 30 -40 Q35 -60 30 -80 Q25 -100 30 -120" 
+          fill="none" stroke="#666666" stroke-width="8"/>
+  </g>
+  
+  <!-- Embers floating -->
+  <g opacity="0.8">
+    <circle cx="150" cy="180" r="1.5" fill="#FFA500" filter="url(#glowFilter)">
+      <animate attributeName="cy" values="180;140;180" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="170" r="1" fill="#FFD700" filter="url(#glowFilter)">
+      <animate attributeName="cy" values="170;130;170" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="180" cy="190" r="1.2" fill="#FF6347" filter="url(#glowFilter)">
+      <animate attributeName="cy" values="190;150;190" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="220" cy="185" r="0.8" fill="#FFA500" filter="url(#glowFilter)">
+      <animate attributeName="cy" values="185;145;185" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Title text with fire effect -->
+  <text x="200" y="280" font-family="Georgia, serif" font-size="18" font-weight="bold" 
+        text-anchor="middle" fill="#FFA500" filter="url(#glowFilter)" opacity="0.9">The Dance of Fire and Clay</text>
+</svg>

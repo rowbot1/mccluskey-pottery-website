@@ -1,0 +1,149 @@
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients for depth and realism -->
+    <radialGradient id="wheelGradient" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#8B7355;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#6B5A45;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5A4935;stop-opacity:1" />
+    </radialGradient>
+    
+    <linearGradient id="clayGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4A574;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C8965A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8855A;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="vesselGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5E6D3;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#E8D4BB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D4C2A8;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filter for depth -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.15"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Texture pattern for clay -->
+    <pattern id="clayTexture" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <circle cx="0.5" cy="0.5" r="0.3" fill="#00000008"/>
+      <circle cx="2.5" cy="2.5" r="0.3" fill="#00000008"/>
+      <circle cx="2.5" cy="0.5" r="0.2" fill="#00000005"/>
+      <circle cx="0.5" cy="2.5" r="0.2" fill="#00000005"/>
+    </pattern>
+  </defs>
+  
+  <!-- Subtle background circle -->
+  <circle cx="40" cy="40" r="38" fill="#FAFAF8" stroke="#E5D4C1" stroke-width="0.5"/>
+  
+  <!-- Pottery wheel with realistic perspective -->
+  <g transform="translate(40, 55)">
+    <!-- Wheel shadow -->
+    <ellipse cx="0" cy="2" rx="22" ry="6" fill="#00000015"/>
+    
+    <!-- Wheel base with gradient -->
+    <ellipse cx="0" cy="0" rx="20" ry="5" fill="url(#wheelGradient)" filter="url(#softShadow)"/>
+    
+    <!-- Wheel rim highlight -->
+    <ellipse cx="0" cy="0" rx="20" ry="5" fill="none" stroke="#9A8A7A" stroke-width="0.5" opacity="0.6"/>
+    
+    <!-- Concentric circles for wheel detail -->
+    <ellipse cx="0" cy="0" rx="16" ry="4" fill="none" stroke="#7A6A5A" stroke-width="0.3" opacity="0.4"/>
+    <ellipse cx="0" cy="0" rx="12" ry="3" fill="none" stroke="#7A6A5A" stroke-width="0.3" opacity="0.3"/>
+    <ellipse cx="0" cy="0" rx="8" ry="2" fill="none" stroke="#7A6A5A" stroke-width="0.3" opacity="0.2"/>
+    
+    <!-- Center spindle -->
+    <circle cx="0" cy="0" r="2" fill="#5A4935" opacity="0.8"/>
+  </g>
+  
+  <!-- Clay vessel being shaped with organic form -->
+  <g transform="translate(40, 32)">
+    <!-- Vessel shadow -->
+    <ellipse cx="0" cy="23" rx="12" ry="3" fill="#00000010"/>
+    
+    <!-- Main vessel body with gradient and texture -->
+    <path d="M0 -8 
+             C-12 -6, -15 -2, -15 5
+             C-15 12, -12 18, -8 20
+             C-5 21, -2 22, 0 22
+             C2 22, 5 21, 8 20
+             C12 18, 15 12, 15 5
+             C15 -2, 12 -6, 0 -8Z" 
+          fill="url(#vesselGradient)" 
+          filter="url(#softShadow)"/>
+    
+    <!-- Clay texture overlay -->
+    <path d="M0 -8 
+             C-12 -6, -15 -2, -15 5
+             C-15 12, -12 18, -8 20
+             C-5 21, -2 22, 0 22
+             C2 22, 5 21, 8 20
+             C12 18, 15 12, 15 5
+             C15 -2, 12 -6, 0 -8Z" 
+          fill="url(#clayTexture)" 
+          opacity="0.5"/>
+    
+    <!-- Interior shadow for depth -->
+    <ellipse cx="0" cy="-5" rx="10" ry="4" fill="#00000015"/>
+    
+    <!-- Rim highlight -->
+    <ellipse cx="0" cy="-8" rx="11" ry="3" fill="none" stroke="#F5E6D3" stroke-width="1" opacity="0.8"/>
+    
+    <!-- Subtle grooves showing hand shaping -->
+    <path d="M-15 5 Q0 3 15 5" fill="none" stroke="#D4C2A8" stroke-width="0.5" opacity="0.4"/>
+    <path d="M-14 8 Q0 6 14 8" fill="none" stroke="#D4C2A8" stroke-width="0.5" opacity="0.3"/>
+    <path d="M-12 11 Q0 9 12 11" fill="none" stroke="#D4C2A8" stroke-width="0.5" opacity="0.2"/>
+  </g>
+  
+  <!-- Potter's hands - more elegant and artistic -->
+  <g transform="translate(40, 35)">
+    <!-- Left hand -->
+    <path d="M-20 0 
+             C-22 -2, -23 -3, -23 -5
+             C-23 -7, -22 -8, -20 -8
+             C-18 -8, -17 -6, -17 -4
+             L-17 2
+             C-17 4, -18 5, -19 5
+             L-18 8" 
+          fill="none" 
+          stroke="#8B7355" 
+          stroke-width="1.5" 
+          stroke-linecap="round"
+          opacity="0.2"/>
+    
+    <!-- Right hand -->
+    <path d="M20 0 
+             C22 -2, 23 -3, 23 -5
+             C23 -7, 22 -8, 20 -8
+             C18 -8, 17 -6, 17 -4
+             L17 2
+             C17 4, 18 5, 19 5
+             L18 8" 
+          fill="none" 
+          stroke="#8B7355" 
+          stroke-width="1.5" 
+          stroke-linecap="round"
+          opacity="0.2"/>
+    
+    <!-- Finger details -->
+    <path d="M-19 -2 L-17 -2 M-19 0 L-17 0" stroke="#8B7355" stroke-width="0.5" opacity="0.15"/>
+    <path d="M19 -2 L17 -2 M19 0 L17 0" stroke="#8B7355" stroke-width="0.5" opacity="0.15"/>
+  </g>
+  
+  <!-- Motion lines showing spinning -->
+  <g transform="translate(40, 55)" opacity="0.3">
+    <path d="M-25 0 A 25 5 0 0 1 25 0" fill="none" stroke="#8B7355" stroke-width="0.5" stroke-dasharray="2,3"/>
+    <path d="M-20 -1 A 20 4 0 0 1 20 -1" fill="none" stroke="#8B7355" stroke-width="0.3" stroke-dasharray="1,2"/>
+  </g>
+  
+  <!-- Artistic swoosh accent -->
+  <path d="M15 20 Q25 15 35 18" fill="none" stroke="#C8965A" stroke-width="0.8" opacity="0.6"/>
+  <path d="M45 62 Q55 65 65 60" fill="none" stroke="#C8965A" stroke-width="0.8" opacity="0.6"/>
+</svg>

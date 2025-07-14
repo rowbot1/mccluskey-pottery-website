@@ -6,9 +6,9 @@ const mccluskeyProducts = [
         story: "The beloved swallow returns each spring to Ireland, bringing hope and renewal. This traditional scene captures their graceful flight in fine porcelain.",
         price: 48.00,
         category: "irish",
-        image: "images/swallow-main.svg",
+        image: "images/swallow-main-improved.svg",
         images: [
-            "images/swallow-main.svg",
+            "images/swallow-main-improved.svg",
             "images/swallow-alt.svg"
         ],
         featured: true,
@@ -21,9 +21,9 @@ const mccluskeyProducts = [
         story: "A charming traditional Irish cottage with its distinctive blue door. This scene could be found anywhere across Ireland's beautiful countryside.",
         price: 48.00,
         category: "irish",
-        image: "images/cottage-blue-main.svg",
+        image: "images/cottage-blue-main-improved.svg",
         images: [
-            "images/cottage-blue-main.svg",
+            "images/cottage-blue-main-improved.svg",
             "images/cottage-blue-alt.svg"
         ],
         details: "6.5 inches (16 cm), mounted on quality frame",

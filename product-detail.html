@@ -133,26 +133,73 @@
             <div class="logo">
                 <a href="index.html" style="text-decoration: none;">
                     <div class="logo-stamp">
-                        <svg class="logo-pottery-wheel" viewBox="0 0 60 60" width="35" height="35">
-                            <!-- Pottery wheel base -->
-                            <circle cx="30" cy="45" r="12" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
-                            <ellipse cx="30" cy="45" rx="12" ry="3" fill="currentColor" opacity="0.2"/>
-                            
-                            <!-- Clay vessel being shaped -->
-                            <path d="M30 15 Q22 18 22 28 Q22 38 26 42 Q28 44 30 44 Q32 44 34 42 Q38 38 38 28 Q38 18 30 15" 
-                                  fill="none" stroke="currentColor" stroke-width="2"/>
-                            <path d="M22 28 Q30 26 38 28" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-                            
-                            <!-- Potter's hands (subtle) -->
-                            <path d="M18 28 Q15 26 15 24 Q15 22 17 22 Q19 22 19 24 L19 30" 
-                                  fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/>
-                            <path d="M42 28 Q45 26 45 24 Q45 22 43 22 Q41 22 41 24 L41 30" 
-                                  fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/>
-                            
-                            <!-- Spinning motion lines -->
-                            <path d="M15 45 Q30 43 45 45" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
-                            <path d="M20 45 Q30 47 40 45" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
-                        </svg>
+                        <svg class="logo-pottery-wheel" viewBox="0 0 80 80" width="35" height="35" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="wheelGradient" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#8B7355;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#6B5A45;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5A4935;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="clayGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4A574;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C8965A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8855A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="vesselGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5E6D3;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#E8D4BB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D4C2A8;stop-opacity:1" />
+    </linearGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.15"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="clayTexture" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <circle cx="0.5" cy="0.5" r="0.3" fill="#00000008"/>
+      <circle cx="2.5" cy="2.5" r="0.3" fill="#00000008"/>
+      <circle cx="2.5" cy="0.5" r="0.2" fill="#00000005"/>
+      <circle cx="0.5" cy="2.5" r="0.2" fill="#00000005"/>
+    </pattern>
+  </defs>
+  <circle cx="40" cy="40" r="38" fill="#FAFAF8" stroke="#E5D4C1" stroke-width="0.5"/>
+  <g transform="translate(40, 55)">
+    <ellipse cx="0" cy="2" rx="22" ry="6" fill="#00000015"/>
+    <ellipse cx="0" cy="0" rx="20" ry="5" fill="url(#wheelGradient)" filter="url(#softShadow)"/>
+    <ellipse cx="0" cy="0" rx="20" ry="5" fill="none" stroke="#9A8A7A" stroke-width="0.5" opacity="0.6"/>
+    <ellipse cx="0" cy="0" rx="16" ry="4" fill="none" stroke="#7A6A5A" stroke-width="0.3" opacity="0.4"/>
+    <ellipse cx="0" cy="0" rx="12" ry="3" fill="none" stroke="#7A6A5A" stroke-width="0.3" opacity="0.3"/>
+    <ellipse cx="0" cy="0" rx="8" ry="2" fill="none" stroke="#7A6A5A" stroke-width="0.3" opacity="0.2"/>
+    <circle cx="0" cy="0" r="2" fill="#5A4935" opacity="0.8"/>
+  </g>
+  <g transform="translate(40, 32)">
+    <ellipse cx="0" cy="23" rx="12" ry="3" fill="#00000010"/>
+    <path d="M0 -8 C-12 -6, -15 -2, -15 5 C-15 12, -12 18, -8 20 C-5 21, -2 22, 0 22 C2 22, 5 21, 8 20 C12 18, 15 12, 15 5 C15 -2, 12 -6, 0 -8Z" fill="url(#vesselGradient)" filter="url(#softShadow)"/>
+    <path d="M0 -8 C-12 -6, -15 -2, -15 5 C-15 12, -12 18, -8 20 C-5 21, -2 22, 0 22 C2 22, 5 21, 8 20 C12 18, 15 12, 15 5 C15 -2, 12 -6, 0 -8Z" fill="url(#clayTexture)" opacity="0.5"/>
+    <ellipse cx="0" cy="-5" rx="10" ry="4" fill="#00000015"/>
+    <ellipse cx="0" cy="-8" rx="11" ry="3" fill="none" stroke="#F5E6D3" stroke-width="1" opacity="0.8"/>
+    <path d="M-15 5 Q0 3 15 5" fill="none" stroke="#D4C2A8" stroke-width="0.5" opacity="0.4"/>
+    <path d="M-14 8 Q0 6 14 8" fill="none" stroke="#D4C2A8" stroke-width="0.5" opacity="0.3"/>
+    <path d="M-12 11 Q0 9 12 11" fill="none" stroke="#D4C2A8" stroke-width="0.5" opacity="0.2"/>
+  </g>
+  <g transform="translate(40, 35)">
+    <path d="M-20 0 C-22 -2, -23 -3, -23 -5 C-23 -7, -22 -8, -20 -8 C-18 -8, -17 -6, -17 -4 L-17 2 C-17 4, -18 5, -19 5 L-18 8" fill="none" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round" opacity="0.2"/>
+    <path d="M20 0 C22 -2, 23 -3, 23 -5 C23 -7, 22 -8, 20 -8 C18 -8, 17 -6, 17 -4 L17 2 C17 4, 18 5, 19 5 L18 8" fill="none" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round" opacity="0.2"/>
+    <path d="M-19 -2 L-17 -2 M-19 0 L-17 0" stroke="#8B7355" stroke-width="0.5" opacity="0.15"/>
+    <path d="M19 -2 L17 -2 M19 0 L17 0" stroke="#8B7355" stroke-width="0.5" opacity="0.15"/>
+  </g>
+  <g transform="translate(40, 55)" opacity="0.3">
+    <path d="M-25 0 A 25 5 0 0 1 25 0" fill="none" stroke="#8B7355" stroke-width="0.5" stroke-dasharray="2,3"/>
+    <path d="M-20 -1 A 20 4 0 0 1 20 -1" fill="none" stroke="#8B7355" stroke-width="0.3" stroke-dasharray="1,2"/>
+  </g>
+  <path d="M15 20 Q25 15 35 18" fill="none" stroke="#C8965A" stroke-width="0.8" opacity="0.6"/>
+  <path d="M45 62 Q55 65 65 60" fill="none" stroke="#C8965A" stroke-width="0.8" opacity="0.6"/>
+</svg>
                         <span class="logo-text">McCluskey<br>Pottery</span>
                         <span class="logo-year">Est. Limavady</span>
                     </div>

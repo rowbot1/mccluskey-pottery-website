@@ -6,10 +6,10 @@ const mccluskeyProducts = [
         story: "The beloved swallow returns each spring to Ireland, bringing hope and renewal. This traditional scene captures their graceful flight in fine porcelain.",
         price: 48.00,
         category: "irish",
-        image: "images/swallow-main-improved.svg",
+        image: "images/swallow-main.jpg",
         images: [
-            "images/swallow-main-improved.svg",
-            "images/swallow-alt.svg"
+            "images/swallow-main.jpg",
+            "images/swallow-alt.jpg"
         ],
         featured: true,
         details: "7.5 inches x 1.25 inches (19 x 3 cm), presented on blue or beige mount with white frame",
@@ -21,10 +21,10 @@ const mccluskeyProducts = [
         story: "A charming traditional Irish cottage with its distinctive blue door. This scene could be found anywhere across Ireland's beautiful countryside.",
         price: 48.00,
         category: "irish",
-        image: "images/cottage-blue-main-improved.svg",
+        image: "images/cottage-blue-main.png",
         images: [
-            "images/cottage-blue-main-improved.svg",
-            "images/cottage-blue-alt.svg"
+            "images/cottage-blue-main.png",
+            "images/cottage-blue-alt.jpg"
         ],
         details: "6.5 inches (16 cm), mounted on quality frame",
         stock: 3
@@ -35,7 +35,7 @@ const mccluskeyProducts = [
         story: "Traditional Irish cottage nestled in the countryside, capturing the warmth and character of rural Irish life in exquisite porcelain detail.",
         price: 48.00,
         category: "irish",
-        image: "images/cottage-scene.svg",
+        image: "images/cottage-scene.png",
         details: "6.5 inches (16 cm), beautifully framed",
         stock: 4
     },
@@ -45,10 +45,10 @@ const mccluskeyProducts = [
         story: "Ireland's majestic mountains captured in delicate porcelain, with a traditional cottage in the foreground surrounded by emerald green fields.",
         price: 48.00,
         category: "irish",
-        image: "images/mountain-scene-main.svg",
+        image: "images/mountain-scene-main.png",
         images: [
-            "images/mountain-scene-main.svg",
-            "images/mountain-scene-alt.svg"
+            "images/mountain-scene-main.png",
+            "images/mountain-scene-alt.jpg"
         ],
         featured: true,
         details: "6.5 inches (16 cm), presented in elegant frame",
@@ -60,7 +60,7 @@ const mccluskeyProducts = [
         story: "A warm Irish welcome for your home. 'Fáilte' means welcome in Irish - perfect for your fridge or any magnetic surface.",
         price: 9.95,
         category: "irish",
-        image: "images/failte-green.svg",
+        image: "images/failte-green.png",
         details: "1 inch (2.5 cm) porcelain magnet",
         stock: 12
     },
@@ -70,7 +70,7 @@ const mccluskeyProducts = [
         story: "Traditional Irish welcome in beautiful blue. A small piece of Ireland to brighten your day.",
         price: 9.95,
         category: "irish",
-        image: "images/failte-blue.svg",
+        image: "images/failte-blue.png",
         details: "1 inch (2.5 cm) porcelain magnet",
         stock: 10
     }

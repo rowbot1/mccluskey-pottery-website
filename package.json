@@ -1,21 +1,30 @@
 {
   "name": "mccluskey-pottery-website",
   "version": "1.0.0",
-  "description": "E-commerce website for McCluskey Pottery",
+  "description": "McCluskey Pottery E-commerce Website",
+  "main": "index.js",
   "scripts": {
-    "test": "playwright test",
-    "test:headed": "playwright test --headed",
-    "test:ui": "playwright test --ui",
-    "test:report": "playwright show-report",
-    "test:main": "playwright test -g 'Main Website'",
-    "test:admin": "playwright test -g 'Admin Panel'",
-    "test:integration": "playwright test -g 'Integration Tests'",
-    "test:performance": "playwright test -g 'Performance Tests'",
-    "test:a11y": "playwright test -g 'Accessibility Tests'"
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui",
+    "setup-stripe": "node setup-stripe-products.js",
+    "generate-pdf": "node generate-pottery-guide.js",
+    "start-api": "node api/simple-product-api.js",
+    "dev": "nodemon api/simple-product-api.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.54.1"
+    "@playwright/test": "^1.44.1",
+    "puppeteer": "^22.12.1"
   },
-  "author": "McCluskey Pottery",
-  "license": "MIT"
+  "dependencies": {
+    "stripe": "^14.0.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "multer": "^2.0.0-rc.4",
+    "sharp": "^0.33.0",
+    "uuid": "^9.0.1",
+    "cors": "^2.8.5"
+  }
 }

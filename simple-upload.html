@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Pottery - McCluskey Pottery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .simple-upload {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .upload-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .photo-upload {
+            border: 3px dashed #ddd;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #f9f9f9;
+        }
+        
+        .photo-upload:hover {
+            border-color: #4A6FA5;
+            background: #f0f5ff;
+        }
+        
+        .photo-upload.has-image {
+            border-color: #4CAF50;
+            background: #f0fff0;
+        }
+        
+        .upload-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        .photo-preview {
+            max-width: 100%;
+            max-height: 300px;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+        
+        .simple-input {
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .simple-input:focus {
+            outline: none;
+            border-color: #4A6FA5;
+        }
+        
+        .price-input-wrapper {
+            position: relative;
+        }
+        
+        .price-symbol {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .price-input {
+            padding-left: 35px;
+        }
+        
+        .simple-select {
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background: white;
+            cursor: pointer;
+        }
+        
+        .description-box {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: #4A6FA5;
+            color: white;
+            padding: 20px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .submit-btn:hover {
+            background: #3a5f95;
+        }
+        
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .success-message {
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 18px;
+            display: none;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4A6FA5;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .help-text {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 600px) {
+            .simple-upload {
+                margin: 20px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="simple-upload">
+        <h1 style="text-align: center; color: #2A5434; margin-bottom: 30px;">Add New Pottery Piece</h1>
+        
+        <form id="simple-upload-form" class="upload-form">
+            <!-- Photo Upload -->
+            <div class="photo-upload" id="photo-upload-area">
+                <input type="file" id="photo-input" accept="image/*" style="display: none;" multiple>
+                <div class="upload-icon">📸</div>
+                <p style="margin: 0; font-size: 18px; color: #666;">Tap to add photos</p>
+                <p class="help-text">You can add multiple photos</p>
+                <div id="photo-preview-container"></div>
+            </div>
+            
+            <!-- Name -->
+            <div>
+                <input type="text" 
+                       id="piece-name" 
+                       class="simple-input" 
+                       placeholder="Name of your piece"
+                       required>
+                <p class="help-text">e.g., "Blue Swallow Bowl"</p>
+            </div>
+            
+            <!-- Price -->
+            <div class="price-input-wrapper">
+                <span class="price-symbol">£</span>
+                <input type="number" 
+                       id="piece-price" 
+                       class="simple-input price-input" 
+                       placeholder="0.00"
+                       step="0.01"
+                       min="0"
+                       required>
+                <p class="help-text">Just enter the number, e.g., 48.50</p>
+            </div>
+            
+            <!-- Category -->
+            <div>
+                <select id="piece-category" class="simple-select" required>
+                    <option value="">Choose a category</option>
+                    <option value="bowls">Bowls</option>
+                    <option value="mugs">Mugs & Cups</option>
+                    <option value="plates">Plates & Platters</option>
+                    <option value="vases">Vases</option>
+                    <option value="decorative">Decorative Pieces</option>
+                    <option value="magnets">Magnets & Small Items</option>
+                    <option value="custom">Custom Orders</option>
+                </select>
+            </div>
+            
+            <!-- Size -->
+            <div>
+                <input type="text" 
+                       id="piece-size" 
+                       class="simple-input" 
+                       placeholder="Size (optional)"
+                       >
+                <p class="help-text">e.g., "6 inches" or "15cm diameter"</p>
+            </div>
+            
+            <!-- Description -->
+            <div>
+                <textarea id="piece-description" 
+                          class="simple-input description-box" 
+                          placeholder="Tell the story of this piece (optional)"></textarea>
+                <p class="help-text">What inspired it? What makes it special?</p>
+            </div>
+            
+            <!-- In Stock -->
+            <div>
+                <label style="font-size: 18px; display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="piece-in-stock" checked style="width: 20px; height: 20px;">
+                    <span>Available for sale</span>
+                </label>
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn" id="submit-btn">
+                Add to Website
+            </button>
+        </form>
+        
+        <!-- Success Message -->
+        <div class="success-message" id="success-message">
+            ✅ Your pottery has been added to the website!
+            <br><br>
+            <button onclick="location.reload()" style="background: white; color: #4CAF50; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+                Add Another Piece
+            </button>
+        </div>
+        
+        <!-- Loading -->
+        <div class="loading" id="loading">
+            <div class="loading-spinner"></div>
+            <p style="margin-top: 20px;">Adding your beautiful pottery...</p>
+        </div>
+    </div>
+
+    <script>
+        // Make the whole upload area clickable
+        document.getElementById('photo-upload-area').addEventListener('click', function() {
+            document.getElementById('photo-input').click();
+        });
+        
+        // Handle photo selection
+        document.getElementById('photo-input').addEventListener('change', function(e) {
+            const files = e.target.files;
+            const previewContainer = document.getElementById('photo-preview-container');
+            previewContainer.innerHTML = '';
+            
+            if (files.length > 0) {
+                document.getElementById('photo-upload-area').classList.add('has-image');
+                
+                Array.from(files).forEach(file => {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.className = 'photo-preview';
+                        previewContainer.appendChild(img);
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+        });
+        
+        // Handle form submission
+        document.getElementById('simple-upload-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('piece-name').value;
+            const price = document.getElementById('piece-price').value;
+            const category = document.getElementById('piece-category').value;
+            const size = document.getElementById('piece-size').value;
+            const description = document.getElementById('piece-description').value;
+            const inStock = document.getElementById('piece-in-stock').checked;
+            const photos = document.getElementById('photo-input').files;
+            
+            // Show loading
+            document.getElementById('simple-upload-form').style.display = 'none';
+            document.getElementById('loading').style.display = 'block';
+            
+            // Here we would normally upload to server
+            // For now, simulate a delay
+            setTimeout(() => {
+                // Hide loading, show success
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('success-message').style.display = 'block';
+                
+                // In real implementation, this would:
+                // 1. Upload photos to cloud storage
+                // 2. Create product in database
+                // 3. Update website automatically
+                
+                console.log('New pottery added:', {
+                    name,
+                    price,
+                    category,
+                    size,
+                    description,
+                    inStock,
+                    photoCount: photos.length
+                });
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

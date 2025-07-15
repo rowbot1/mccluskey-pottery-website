@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Add Pottery - Super Simple</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        
+        .app {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        /* Photo Section - Make it BIG and obvious */
+        .photo-section {
+            background: #f0f5ff;
+            border: 3px dashed #4A6FA5;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .photo-section:active {
+            transform: scale(0.98);
+        }
+        
+        .camera-icon {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+        
+        .photo-text {
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .photo-preview {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            overflow-x: auto;
+            padding: 5px;
+        }
+        
+        .photo-thumb {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        /* Simple form fields */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            background: #f9f9f9;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #4A6FA5;
+            background: white;
+        }
+        
+        /* Price input special */
+        .price-wrapper {
+            position: relative;
+        }
+        
+        .pound-sign {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #999;
+        }
+        
+        .price-input {
+            padding-left: 35px;
+        }
+        
+        /* Big simple buttons */
+        .category-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .category-btn {
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            background: #f9f9f9;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .category-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .category-btn.selected {
+            background: #4A6FA5;
+            color: white;
+            border-color: #4A6FA5;
+        }
+        
+        /* Submit button - make it HUGE */
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .submit-btn:disabled {
+            background: #ccc;
+        }
+        
+        /* Success screen */
+        .success-screen {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .success-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .success-message {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .add-another-btn {
+            padding: 15px 30px;
+            background: #4A6FA5;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        
+        /* Loading */
+        .loading-screen {
+            display: none;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4A6FA5;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Make everything bigger on small screens */
+        @media (max-width: 400px) {
+            .app {
+                padding: 15px;
+            }
+            
+            .form-input {
+                font-size: 16px;
+            }
+            
+            .category-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Optional fields toggle */
+        .optional-toggle {
+            text-align: center;
+            margin: 20px 0;
+            color: #666;
+            cursor: pointer;
+        }
+        
+        .optional-fields {
+            display: none;
+        }
+        
+        .optional-fields.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <!-- Main Form -->
+        <div id="main-form">
+            <h1>Add New Pottery 🏺</h1>
+            
+            <!-- Photo Upload - SUPER OBVIOUS -->
+            <div class="photo-section" onclick="document.getElementById('photo-input').click()">
+                <input type="file" id="photo-input" accept="image/*" multiple style="display: none">
+                <div class="camera-icon">📸</div>
+                <div class="photo-text">Tap here to add photos</div>
+                <div class="photo-preview" id="photo-preview"></div>
+            </div>
+            
+            <!-- Name - Simple -->
+            <div class="form-group">
+                <label class="form-label">What is it called?</label>
+                <input type="text" class="form-input" id="piece-name" placeholder="e.g. Blue Swallow Bowl">
+            </div>
+            
+            <!-- Price - With £ sign -->
+            <div class="form-group">
+                <label class="form-label">How much?</label>
+                <div class="price-wrapper">
+                    <span class="pound-sign">£</span>
+                    <input type="number" class="form-input price-input" id="piece-price" placeholder="0.00" step="0.01">
+                </div>
+            </div>
+            
+            <!-- Category - Big buttons -->
+            <div class="form-group">
+                <label class="form-label">What type is it?</label>
+                <div class="category-buttons">
+                    <button class="category-btn" data-category="bowls">Bowl</button>
+                    <button class="category-btn" data-category="mugs">Mug</button>
+                    <button class="category-btn" data-category="plates">Plate</button>
+                    <button class="category-btn" data-category="vases">Vase</button>
+                    <button class="category-btn" data-category="decorative">Decorative</button>
+                    <button class="category-btn" data-category="other">Other</button>
+                </div>
+            </div>
+            
+            <!-- Optional fields -->
+            <div class="optional-toggle" onclick="toggleOptional()">
+                Add more details (optional) ⬇️
+            </div>
+            
+            <div class="optional-fields" id="optional-fields">
+                <div class="form-group">
+                    <label class="form-label">Size (optional)</label>
+                    <input type="text" class="form-input" id="piece-size" placeholder="e.g. 6 inches">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Tell its story (optional)</label>
+                    <textarea class="form-input" id="piece-story" rows="3" placeholder="What inspired this piece?"></textarea>
+                </div>
+            </div>
+            
+            <!-- Submit button - BIG -->
+            <button class="submit-btn" id="submit-btn" onclick="submitPottery()">
+                Add to Website ✨
+            </button>
+        </div>
+        
+        <!-- Loading Screen -->
+        <div class="loading-screen" id="loading-screen">
+            <div class="spinner"></div>
+            <p style="font-size: 18px; color: #666;">Adding your pottery...</p>
+        </div>
+        
+        <!-- Success Screen -->
+        <div class="success-screen" id="success-screen">
+            <div class="success-icon">🎉</div>
+            <div class="success-message">It's on your website!</div>
+            <button class="add-another-btn" onclick="resetForm()">Add Another</button>
+        </div>
+    </div>
+    
+    <script>
+        let selectedCategory = null;
+        let selectedPhotos = [];
+        
+        // Handle photo selection
+        document.getElementById('photo-input').addEventListener('change', function(e) {
+            const files = Array.from(e.target.files);
+            selectedPhotos = files;
+            
+            const preview = document.getElementById('photo-preview');
+            preview.innerHTML = '';
+            
+            files.forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'photo-thumb';
+                    preview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            });
+            
+            // Change the upload area color to show success
+            document.querySelector('.photo-section').style.borderColor = '#4CAF50';
+            document.querySelector('.photo-section').style.background = '#f0fff0';
+        });
+        
+        // Handle category selection
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+                selectedCategory = this.dataset.category;
+            });
+        });
+        
+        // Toggle optional fields
+        function toggleOptional() {
+            const fields = document.getElementById('optional-fields');
+            fields.classList.toggle('show');
+            document.querySelector('.optional-toggle').textContent = 
+                fields.classList.contains('show') ? 'Hide details ⬆️' : 'Add more details (optional) ⬇️';
+        }
+        
+        // Submit the pottery
+        async function submitPottery() {
+            const name = document.getElementById('piece-name').value;
+            const price = document.getElementById('piece-price').value;
+            
+            // Basic validation
+            if (!selectedPhotos.length) {
+                alert('Please add at least one photo 📸');
+                return;
+            }
+            
+            if (!name) {
+                alert('Please give your piece a name 😊');
+                return;
+            }
+            
+            if (!price) {
+                alert('Please add a price 💷');
+                return;
+            }
+            
+            if (!selectedCategory) {
+                alert('Please choose what type it is 🏺');
+                return;
+            }
+            
+            // Show loading
+            document.getElementById('main-form').style.display = 'none';
+            document.getElementById('loading-screen').style.display = 'block';
+            
+            // Create form data
+            const formData = new FormData();
+            selectedPhotos.forEach(photo => {
+                formData.append('photos', photo);
+            });
+            formData.append('name', name);
+            formData.append('price', price);
+            formData.append('category', selectedCategory);
+            formData.append('size', document.getElementById('piece-size').value);
+            formData.append('description', document.getElementById('piece-story').value);
+            formData.append('inStock', 'true');
+            
+            try {
+                // Send to server
+                const response = await fetch('/api/add-pottery', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    // Show success
+                    setTimeout(() => {
+                        document.getElementById('loading-screen').style.display = 'none';
+                        document.getElementById('success-screen').style.display = 'block';
+                    }, 1500);
+                } else {
+                    throw new Error('Upload failed');
+                }
+            } catch (error) {
+                alert('Something went wrong. Please try again.');
+                document.getElementById('loading-screen').style.display = 'none';
+                document.getElementById('main-form').style.display = 'block';
+            }
+        }
+        
+        // Reset form to add another
+        function resetForm() {
+            document.getElementById('main-form').style.display = 'block';
+            document.getElementById('success-screen').style.display = 'none';
+            
+            // Reset all fields
+            document.getElementById('photo-input').value = '';
+            document.getElementById('photo-preview').innerHTML = '';
+            document.getElementById('piece-name').value = '';
+            document.getElementById('piece-price').value = '';
+            document.getElementById('piece-size').value = '';
+            document.getElementById('piece-story').value = '';
+            
+            document.querySelector('.photo-section').style.borderColor = '#4A6FA5';
+            document.querySelector('.photo-section').style.background = '#f0f5ff';
+            
+            document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('selected'));
+            selectedCategory = null;
+            selectedPhotos = [];
+        }
+    </script>
+</body>
+</html>
